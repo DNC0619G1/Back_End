@@ -1,14 +1,16 @@
-//package com.codegym.dao.repository;
+package com.codegym.dao.repository;
+import com.codegym.dao.entity.Movie;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+public interface MovieRepository extends JpaRepository<Movie, Integer> {
+//List<Movie> findAllByNameMovieContaining(String name);
 //
-//import com.codegym.dao.entity.Movie;
-//import com.codegym.dao.entity.Order;
-//import org.springframework.data.jpa.repository.JpaRepository;
+//List<Movie> findAllByActorContaining(String actor);
 //
-//import java.util.List;
-//
-//public interface MovieRepository extends JpaRepository<Movie,Integer> {
-////    Movie findAllByNameMovieContaining(String name);
-//   List<Movie> findAllByNameMovieContaining(String name);
-//   void updateOrder(Order order);
-//
-//}
+//List<Movie> findAllByAuthorContaining(String author);
+
+    List<Movie> findAllByCategoryMovieContaining(String category);
+
+    List<Movie> findAllByNameMovieContainingOrActorContainingOrAuthorContaining(String name, String actor, String author);
+}
