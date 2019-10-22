@@ -1,62 +1,28 @@
-package com.codegym.dao.entity;
+package com.codegym.dao.dto;
 
-
-import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
-@Entity
-@Table(name = "user")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_user")
+public class UserDTO implements Serializable {
     private Long idUser;
-
-    @Column(name = "user_name")
     private String userName;
-
-    @Column(name = "password")
     private String password;
-
-    @Column(name = "full_name")
     private String fullName;
-
-    @Temporal(TemporalType.DATE)
-    @Column(name = "birth_day")
     private Date birthDay;
-
-    @Column(name = "sex")
     private String sex;
-
-    @Column(name = "email")
     private String email;
-
-    @Column(name = "license")
     private int license;
-
-    @Column(name = "number_phone")
     private int numberPhone;
-
-    @Column(name = "address")
-    private String  address;
-
-    @Column(name = "name_member_card")
+    private String address;
     private String nameMemberCard;
-
-    @Column(name = "point")
     private int point;
-
-    @Column(name = "id_role")
     private Long id_role;
-
-//    @OneToOne(mappedBy = "card_member")
-//    private MemberCard memberCard;
-
-    public User(){
+    public UserDTO(){
 
     }
 
-    public User(String userName, String password, String fullName, Date birthDay, String sex, String email, int license, int numberPhone, String address, String nameMemberCard, int point, Long id_role) {
+    public UserDTO(Long idUser, String userName, String password, String fullName, Date birthDay, String sex, String email, int license, int numberPhone, String address, String nameMemberCard, int point, Long id_role) {
+        this.idUser = idUser;
         this.userName = userName;
         this.password = password;
         this.fullName = fullName;
@@ -111,6 +77,24 @@ public class User {
         this.fullName = fullName;
     }
 
+
+
+    public String getNameMemberCard() {
+        return nameMemberCard;
+    }
+
+    public void setNameMemberCard(String nameMemberCard) {
+        this.nameMemberCard = nameMemberCard;
+    }
+
+    public int getPoint() {
+        return point;
+    }
+
+    public void setPoint(int point) {
+        this.point = point;
+    }
+
     public Date getBirthDay() {
         return birthDay;
     }
@@ -125,6 +109,14 @@ public class User {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getLicense() {
@@ -147,31 +139,7 @@ public class User {
         return address;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public String getNameMemberCard() {
-        return nameMemberCard;
-    }
-
-    public void setNameMemberCard(String nameMemberCard) {
-        this.nameMemberCard = nameMemberCard;
-    }
-
-    public int getPoint() {
-        return point;
-    }
-
-    public void setPoint(int point) {
-        this.point = point;
     }
 }
