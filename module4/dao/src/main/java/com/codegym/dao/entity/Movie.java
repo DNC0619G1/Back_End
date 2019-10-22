@@ -1,70 +1,57 @@
 package com.codegym.dao.entity;
 
 import javax.persistence.*;
-import java.util.Set;
 
-@Table(name = "`movie`" ,schema = "cinema_module4")
 @Entity
+@Table (name="movie")
 public class Movie {
 
     @Id
+    @Column(name = "id_movie")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "`id_movie`")
-    private Integer idMovie;
+    private int idMovie;
+
     private String nameMovie;
-    private String cateloryMovie;
+
+    private String categoryMovie;
+
     private String actor;
+
     private String author;
+
     private String studioMovie;
+
     private String duration;
+
     private String content;
-    private  String showings;
-@ManyToOne
-    private  Order order;
+
+    private String imgMovie;
+
+    private String trailerMovie;
+
+    private String openingTime;
+
     public Movie() {
     }
 
-    public Movie( String showings, Order order,   String nameMovie, String cateloryMovie, String actor, String author, String studioMovie, String duration, String content) {
-       this.showings =showings;
-       this.order =order;
+    public Movie(String nameMovie, String categoryMovie, String actor, String author, String studioMovie, String duration, String content, String imgMovie, String trailerMovie, String openingTime) {
         this.nameMovie = nameMovie;
-        this.cateloryMovie = cateloryMovie;
+        this.categoryMovie = categoryMovie;
         this.actor = actor;
         this.author = author;
         this.studioMovie = studioMovie;
         this.duration = duration;
         this.content = content;
-    }
-//    public Account getAccount() {
-//        return account;
-//    }
-//
-//    public void setAccount(Account account) {
-//        this.account = account;
-//    }
-
-    public Order getOrder() {
-        return order;
+        this.imgMovie = imgMovie;
+        this.trailerMovie = trailerMovie;
+        this.openingTime = openingTime;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
-
-    public String getShowings() {
-        return showings;
-    }
-
-    public void setShowings(String showings) {
-        this.showings = showings;
-    }
-
-    public Integer getIdMovie() {
+    public int getIdMovie() {
         return idMovie;
     }
 
-    public void setIdMovie(Integer idMovie) {
+    public void setIdMovie(int idMovie) {
         this.idMovie = idMovie;
     }
 
@@ -76,12 +63,12 @@ public class Movie {
         this.nameMovie = nameMovie;
     }
 
-    public String getCateloryMovie() {
-        return cateloryMovie;
+    public String getCategoryMovie() {
+        return categoryMovie;
     }
 
-    public void setCateloryMovie(String cateloryMovie) {
-        this.cateloryMovie = cateloryMovie;
+    public void setCategoryMovie(String categoryMovie) {
+        this.categoryMovie = categoryMovie;
     }
 
     public String getActor() {
@@ -122,5 +109,29 @@ public class Movie {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getImgMovie() {
+        return imgMovie;
+    }
+
+    public void setImgMovie(String imgMovie) {
+        this.imgMovie = imgMovie;
+    }
+
+    public String getTrailerMovie() {
+        return trailerMovie;
+    }
+
+    public void setTrailerMovie(String trailerMovie) {
+        this.trailerMovie = trailerMovie;
+    }
+
+    public String getOpeningTime() {
+        return openingTime;
+    }
+
+    public void setOpeningTime(String openingTime) {
+        this.openingTime = openingTime;
     }
 }
