@@ -9,17 +9,22 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
+
 @RestController
-@CrossOrigin(origins = "", allowedHeaders = "")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ShowTimeController {
     @Autowired
     public ShowTimeService showTimeService;
-    @GetMapping(value = {"/getShowTimes"})
-    private ResponseEntity<?> getShowTimes(){
-        List<ShowTime> showTimes =showTimeService.getShowTimes();
+
+    @GetMapping(value = "/getShowTimes")
+    private ResponseEntity<?> getShowTimes() {
+        System.out.println("abc");
+        List<ShowTime> showTimes = showTimeService.getShowTimes();
         return ResponseEntity.ok(showTimes);
     }
+
     @GetMapping(value = {"/getShowtime/{id}"})
     public ResponseEntity<ShowTime> getShowTime(@PathVariable int id) {
         ShowTime showTime = showTimeService.getById(id);

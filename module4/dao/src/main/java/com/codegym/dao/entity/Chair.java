@@ -18,14 +18,14 @@ public class Chair {
     @Column(name = "status_chair")
     private int statusChair;
     @Column(name = "choise_status")
-    private int choiseStatus;
+    private boolean choiseStatus;
     @Column(name = "position")
     private String position;
     @Column(name = "price_type_chair")
     private int priceChairType;
     @Column(name = "type")
     private String type;
-    public Chair(int row, int column, int idChairDetail, String room, int statusChair, int choiseStatus, String position, int priceChairType, String type) {
+    public Chair(int row, int column, int idChairDetail, String room, int statusChair, boolean choiseStatus, String position, int priceChairType, String type) {
         this.row = row;
         this.column = column;
         this.idChairDetail = idChairDetail;
@@ -74,10 +74,10 @@ public class Chair {
     public void setStatusChair(int statusChair) {
         this.statusChair = statusChair;
     }
-    public int getChoiseStatus() {
+    public boolean getChoiseStatus() {
         return choiseStatus;
     }
-    public void setChoiseStatus(int choiseStatus) {
+    public void setChoiseStatus(boolean choiseStatus) {
         this.choiseStatus = choiseStatus;
     }
     public String getPosition() {
