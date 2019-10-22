@@ -1,2 +1,2 @@
-12
-tran duc toan
+
+tran duc toan dep trai
