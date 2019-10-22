@@ -16,7 +16,7 @@ public class ShowTime {
     @Column(name = "show_date")
     private Date showDate;
     @Column(name="id_time_frame")
-    private String showTime;
+    private int showTime;
     @Column(name="room")
     private String room;
     public ShowTime() {
@@ -39,10 +39,10 @@ public class ShowTime {
     public void setShowDate(Date showDate) {
         this.showDate = showDate;
     }
-    public String getShowTime() {
+    public int getShowTime() {
         return showTime;
     }
-    public void setShowTime(String showTime) {
+    public void setShowTime(int showTime) {
         this.showTime = showTime;
     }
     public String getRoom() {
