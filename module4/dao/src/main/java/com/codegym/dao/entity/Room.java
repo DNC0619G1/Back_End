@@ -10,13 +10,9 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idRoom;
     @Column(name="name_room")
-    private String nameRoom;
+    private String name;
 
     public Room() {
-    }
-
-    public Room(String nameRoom) {
-        this.nameRoom = nameRoom;
     }
 
     public int getIdRoom() {
@@ -27,11 +23,15 @@ public class Room {
         this.idRoom = idRoom;
     }
 
-    public String getNameRoom() {
-        return nameRoom;
+    public String getName() {
+        return name;
     }
 
-    public void setNameRoom(String nameRoom) {
-        this.nameRoom = nameRoom;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Room(String name) {
+        this.name = name;
     }
 }
