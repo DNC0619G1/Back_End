@@ -33,4 +33,10 @@ public class PromotionController {
         promotionService.removePromotion(id);
         return ResponseEntity.ok("delete ok");
     }
+
+    @PostMapping(value={"/add"})
+    public ResponseEntity<Promotion> addPromotion(@RequestBody Promotion promotion){
+        promotionService.savePromotion(promotion);
+        return ResponseEntity.ok(promotion);
+    }
 }

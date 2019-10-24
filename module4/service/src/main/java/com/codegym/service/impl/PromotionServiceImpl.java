@@ -28,4 +28,9 @@ public class PromotionServiceImpl implements PromotionService {
     public void removePromotion(int id) {
          promotionRepository.deleteByIdPromotion(id);
     }
+
+    @Override
+    public Promotion savePromotion(Promotion promotion) {
+        return promotionRepository.save(promotion);
+    }
 }
