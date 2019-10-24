@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "`order`", schema = "cgv_codegym")
+@Table(name = "`order`", schema = "cinema_module4")
 public class Order {
     @Id
     @Column(name = "`id_order`")
