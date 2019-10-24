@@ -10,4 +10,6 @@ public interface PromotionService {
     Promotion getPromotion(int id);
 
     void removePromotion(int id);
+
+    Promotion savePromotion(Promotion promotion);
 }
