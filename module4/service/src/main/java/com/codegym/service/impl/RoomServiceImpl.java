@@ -21,4 +21,12 @@ public class RoomServiceImpl implements RoomService {
         return roomRepository.findById(id).orElse(null);
     }
 
+    @Override
+    public void saveRoom(Room room) {
+        Room roomCreate = new Room();
+        roomCreate.setIdRoom(room.getIdRoom());
+        roomCreate.setNameRoom(room.getNameRoom());
+        roomRepository.save(roomCreate);
+    }
+
 }

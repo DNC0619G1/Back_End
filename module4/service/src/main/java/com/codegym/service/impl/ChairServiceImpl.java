@@ -17,4 +17,25 @@ class ChairServiceImpl implements ChairService {
     public Chair getChairById(int id) {
         return chairRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public Chair updateChairDetail(Chair chair) {
+        chair.setIdChairDetail(chair.getIdChair());
+        return null;
+    }
+
+    @Override
+    public void saveChair(Chair chair) {
+
+    }
+
+    @Override
+    public void updateChair(Chair chair) {
+
+    }
+
+    @Override
+    public void deleteChair(int id) {
+
+    }
 }
