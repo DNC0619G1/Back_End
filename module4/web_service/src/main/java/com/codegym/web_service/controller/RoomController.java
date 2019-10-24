@@ -15,27 +15,30 @@ import java.util.List;
 public class RoomController {
     @Autowired
     public RoomService roomService;
+
     @GetMapping(value = {"/rooms"})
-    private ResponseEntity<?> getRooms(){
-        List<Room> chairs =roomService.getRooms();
+    private ResponseEntity<?> getRooms() {
+        List<Room> chairs = roomService.getRooms();
         return ResponseEntity.ok(chairs);
     }
+
     @GetMapping(value = {"/room/{id}"})
     public ResponseEntity<Room> getRoom(@PathVariable int id) {
         Room room = roomService.getRoomById(id);
         return new ResponseEntity<Room>(room, HttpStatus.OK);
     }
+
     @PostMapping("/rooms")
-    public ResponseEntity<Room> createRoom(@Valid @RequestBody Room room){
+    public ResponseEntity<Room> createRoom(@Valid @RequestBody Room room) {
         roomService.saveRoom(room);
         return ResponseEntity.ok(room);
     }
-//    @PutMapping("/rooms/{id}")
-//    public ResponseEntity<Room> updateRoom(@PathVariable(value = "id") Integer idRoom,
-//                                                   @Valid @RequestBody Room roomDetails) {
-//        Room room = roomService.getRoomById(idRoom);
-//        room.setNameRoom(roomDetails.getNameRoom());
-//        final Room updatedEmployee = roomService.saveRoom(room);
+
+
+//    @PutMapping("updatenameroom/{id}")
+//    public ResponseEntity<?> updateNameRoom(@PathVariable("id") Integer id, @RequestBody String name) {
+//        roomService.updateNameRoom(id, name);
+//        Room room = roomService.getRoomById(id);
 //        return ResponseEntity.ok(room);
 //    }
 

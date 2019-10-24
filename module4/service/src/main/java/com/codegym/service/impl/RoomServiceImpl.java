@@ -29,4 +29,10 @@ public class RoomServiceImpl implements RoomService {
         roomRepository.save(roomCreate);
     }
 
+//    @Override
+//    public void updateNameRoom(int id, String name) {
+//        Room room=roomRepository.findById(id).orElse(null);
+//        room.setNameRoom(name);
+//        roomRepository.save(room);
+//    }
 }
