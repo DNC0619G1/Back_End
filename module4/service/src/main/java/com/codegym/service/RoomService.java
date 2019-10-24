@@ -8,4 +8,5 @@ public interface RoomService {
     List<Room> getRooms();
     Room getRoomById(int id);
     void saveRoom(Room room);
+//    public void updateNameRoom(int id, String name);
 }

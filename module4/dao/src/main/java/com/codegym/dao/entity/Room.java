@@ -11,8 +11,18 @@ public class Room {
     private int idRoom;
     @Column(name="name_room")
     private String nameRoom;
+    @Column(name="description")
+    private String description;
 
     public Room() {
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Room(String nameRoom) {
