@@ -33,4 +33,9 @@ public class PromotionServiceImpl implements PromotionService {
     public Promotion savePromotion(Promotion promotion) {
         return promotionRepository.save(promotion);
     }
+
+    @Override
+    public List<Promotion> searchPromotion(String title) {
+        return promotionRepository.findAllByTitlePromotionContaining(title);
+    }
 }
