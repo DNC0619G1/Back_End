@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: cgv_codegym
+-- Host: 127.0.0.1    Database: cgv_codegym
 -- ------------------------------------------------------
 -- Server version	8.0.17
 
@@ -14,37 +14,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `user`
---
-
-DROP TABLE IF EXISTS `user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user` (
-  `id_user` int(11) NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `full_name` varchar(255) NOT NULL,
-  `birth_day` date NOT NULL,
-  `sex` varchar(25) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `license` varchar(255) NOT NULL,
-  `number_phone` int(11) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `name_member_card` varchar(255) NOT NULL,
-  `point` int(11) NOT NULL,
-  `id_role` int(11) NOT NULL,
-  PRIMARY KEY (`id_user`),
-  UNIQUE KEY `email_UNIQUE` (`email`),
-  UNIQUE KEY `license_UNIQUE` (`license`),
-  UNIQUE KEY `number_phone_UNIQUE` (`number_phone`),
-  UNIQUE KEY `name_member_card_UNIQUE` (`name_member_card`),
-  KEY `fk_id_role_idx` (`id_role`),
-  CONSTRAINT `fk_id_role` FOREIGN KEY (`id_role`) REFERENCES `role` (`id_role`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `user`
@@ -65,4 +34,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-22 20:24:25
+-- Dump completed on 2019-10-25 15:11:16
