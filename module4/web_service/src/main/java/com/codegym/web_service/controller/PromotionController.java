@@ -39,4 +39,10 @@ public class PromotionController {
         promotionService.savePromotion(promotion);
         return ResponseEntity.ok(promotion);
     }
+
+    @GetMapping(value={"/search/{title}"})
+    public ResponseEntity<?> getPromotionByTitle(@PathVariable("title") String title){
+        List<Promotion> promotions = promotionService.searchPromotion(title);
+        return ResponseEntity.ok(promotions);
+    }
 }

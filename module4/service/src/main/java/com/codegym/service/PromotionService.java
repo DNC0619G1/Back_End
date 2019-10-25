@@ -12,4 +12,6 @@ public interface PromotionService {
     void removePromotion(int id);
 
     Promotion savePromotion(Promotion promotion);
+
+    List<Promotion> searchPromotion(String title);
 }
