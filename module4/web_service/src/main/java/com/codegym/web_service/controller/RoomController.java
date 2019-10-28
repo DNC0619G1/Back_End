@@ -3,6 +3,9 @@ package com.codegym.web_service.controller;
 import com.codegym.dao.entity.Room;
 import com.codegym.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,18 +31,16 @@ public class RoomController {
         return new ResponseEntity<Room>(room, HttpStatus.OK);
     }
 
-    @PostMapping("/rooms")
+    @PostMapping("/addroom")
     public ResponseEntity<Room> createRoom(@Valid @RequestBody Room room) {
         roomService.saveRoom(room);
         return ResponseEntity.ok(room);
     }
 
 
-//    @PutMapping("updatenameroom/{id}")
-//    public ResponseEntity<?> updateNameRoom(@PathVariable("id") Integer id, @RequestBody String name) {
-//        roomService.updateNameRoom(id, name);
-//        Room room = roomService.getRoomById(id);
-//        return ResponseEntity.ok(room);
+//    @GetMapping(value = {"/rooms"})
+//    private ResponseEntity<?> getRooms(@PageableDefault(value = 5) Pageable pageable ) {
+//        Page<Room> chairs = roomService.pageRoom(pageable);
+//        return ResponseEntity.ok(chairs);
 //    }
-
 }

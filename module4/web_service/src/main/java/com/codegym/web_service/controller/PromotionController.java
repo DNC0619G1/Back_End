@@ -33,16 +33,4 @@ public class PromotionController {
         promotionService.removePromotion(id);
         return ResponseEntity.ok("delete ok");
     }
-
-    @PostMapping(value={"/add"})
-    public ResponseEntity<Promotion> addPromotion(@RequestBody Promotion promotion){
-        promotionService.savePromotion(promotion);
-        return ResponseEntity.ok(promotion);
-    }
-
-    @GetMapping(value={"/search/{title}"})
-    public ResponseEntity<?> getPromotionByTitle(@PathVariable("title") String title){
-        List<Promotion> promotions = promotionService.searchPromotion(title);
-        return ResponseEntity.ok(promotions);
-    }
 }
