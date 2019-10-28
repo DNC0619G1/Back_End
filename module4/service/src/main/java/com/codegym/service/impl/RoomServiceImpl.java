@@ -4,6 +4,9 @@ import com.codegym.dao.entity.Room;
 import com.codegym.dao.repository.RoomRepository;
 import com.codegym.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +16,7 @@ public class RoomServiceImpl implements RoomService {
     private RoomRepository roomRepository;
     @Override
     public List<Room> getRooms() {
-        return roomRepository.findAll();
+        return (List<Room>) roomRepository.findAll();
     }
 
     @Override
@@ -26,13 +29,14 @@ public class RoomServiceImpl implements RoomService {
         Room roomCreate = new Room();
         roomCreate.setIdRoom(room.getIdRoom());
         roomCreate.setNameRoom(room.getNameRoom());
+        roomCreate.setDescription(room.getDescription());
         roomRepository.save(roomCreate);
     }
 
-//    @Override
-//    public void updateNameRoom(int id, String name) {
-//        Room room=roomRepository.findById(id).orElse(null);
-//        room.setNameRoom(name);
-//        roomRepository.save(room);
-//    }
+    @Override
+    public Page<Room> pageRoom(Pageable pageable) {
+        return roomRepository.findAll( pageable);
+    }
+
+
 }
