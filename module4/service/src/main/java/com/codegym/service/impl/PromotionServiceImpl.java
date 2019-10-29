@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Date;
 import java.util.List;
 @Transactional
 @Service
@@ -37,5 +38,10 @@ public class PromotionServiceImpl implements PromotionService {
     @Override
     public List<Promotion> searchPromotion(String title) {
         return promotionRepository.findAllByTitlePromotionContaining(title);
+    }
+
+    @Override
+    public List<Promotion> searchPromotionByDate(Date startDate, Date endDate) {
+        return promotionRepository.findAllByStartDateBetween(startDate, endDate);
     }
 }
