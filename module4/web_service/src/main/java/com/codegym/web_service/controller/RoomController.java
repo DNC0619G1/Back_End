@@ -38,9 +38,14 @@ public class RoomController {
     }
 
 
-//    @GetMapping(value = {"/rooms"})
-//    private ResponseEntity<?> getRooms(@PageableDefault(value = 5) Pageable pageable ) {
-//        Page<Room> chairs = roomService.pageRoom(pageable);
-//        return ResponseEntity.ok(chairs);
-//    }
+    @GetMapping(value = {"/roomPages"})
+    private ResponseEntity<?> getRooms(@PageableDefault(value = 5) Pageable pageable ) {
+        Page<Room> chairs = roomService.pageRoom(pageable);
+        return ResponseEntity.ok(chairs);
+    }
+    @GetMapping(value = {"/searchNameRoom/{nameRoom}"})
+    private ResponseEntity<?> getSearchNameRoom(@PathVariable String nameRoom) {
+        List<Room> chairSearchs = roomService.getSearchRoom(nameRoom);
+        return ResponseEntity.ok(chairSearchs);
+    }
 }

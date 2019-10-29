@@ -13,7 +13,6 @@ public class Room {
     private String nameRoom;
     @Column(name="description")
     private String description;
-
     public Room() {
     }
 

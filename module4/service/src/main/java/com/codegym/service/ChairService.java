@@ -13,5 +13,5 @@ public interface ChairService {
     void saveChair(Chair chair);
     void updateChair(Chair chair);
     void deleteChair(int id);
-    Map<Integer, List<Chair>> getChairsMap();
+//    Map<Integer, List<Chair>> getChairsMap();
 }

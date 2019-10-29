@@ -40,7 +40,7 @@ class ChairServiceImpl implements ChairService {
             chair1.setType("Normal");
         }
         chair1.setIdChair(chair.getIdChair());
-        chair1.setIdRoom(chair.getIdRoom());
+        chair1.setRoom(chair.getRoom());
         chair1.setColumn(chair.getColumn());
         chair1.setRow(chair.getRow());
         chair1.setPosition(chair.getPosition());
@@ -59,18 +59,18 @@ class ChairServiceImpl implements ChairService {
         chairRepository.deleteById(idChair);
     }
 
-    @Override
-    public Map<Integer, List<Chair>> getChairsMap() {
-        List<Chair> chairs = chairRepository.findAll();
-        return chairs.stream()
-                .collect(Collectors.toMap(Chair::getIdRoom,
-                        p -> {
-                            List<Chair> list = new ArrayList<>();
-                            list.add(p);
-                            return list;
-                        }, (oldValue, newValue) -> {
-                            newValue.addAll(oldValue);
-                            return newValue;
-                        }));
-    }
+//    @Override
+//    public Map<Integer, List<Chair>> getChairsMap() {
+//        List<Chair> chairs = chairRepository.findAll();
+//        return chairs.stream()
+//                .collect(Collectors.toMap(Chair::getRoom().get,
+//                        p -> {
+//                            List<Chair> list = new ArrayList<>();
+//                            list.add(p);
+//                            return list;
+//                        }, (oldValue, newValue) -> {
+//                            newValue.addAll(oldValue);
+//                            return newValue;
+//                        }));
+//    }
 }
