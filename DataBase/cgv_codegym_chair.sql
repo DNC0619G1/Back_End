@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: cgv_codegym
+-- Host: 127.0.0.1    Database: cgv_codegym
 -- ------------------------------------------------------
 -- Server version	8.0.17
 
@@ -14,28 +14,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `chair`
---
-
-DROP TABLE IF EXISTS `chair`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `chair` (
-  `id_chair` int(11) NOT NULL AUTO_INCREMENT,
-  `column_chair` int(11) NOT NULL,
-  `row_chair` int(11) NOT NULL,
-  `room` varchar(255) NOT NULL,
-  `status_chair` int(11) NOT NULL,
-  `position` varchar(255) NOT NULL,
-  `price_type_chair` int(11) NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `choise_status` bit(1) DEFAULT NULL,
-  `chair_detail` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_chair`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `chair`
@@ -56,4 +34,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-22 20:24:26
+-- Dump completed on 2019-10-25 15:11:15

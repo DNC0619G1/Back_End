@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: cgv_codegym
+-- Host: 127.0.0.1    Database: cgv_codegym
 -- ------------------------------------------------------
 -- Server version	8.0.17
 
@@ -14,27 +14,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `show_time`
---
-
-DROP TABLE IF EXISTS `show_time`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `show_time` (
-  `id_show_time` int(11) NOT NULL AUTO_INCREMENT,
-  `id_movie` int(11) NOT NULL,
-  `id_time_frame` int(11) NOT NULL,
-  `room` varchar(255) NOT NULL,
-  `show_date` date NOT NULL,
-  PRIMARY KEY (`id_show_time`),
-  KEY `fk_id_movie_idx` (`id_movie`),
-  KEY `fk_id_time_frame_idx` (`id_time_frame`),
-  CONSTRAINT `fk_id_movie` FOREIGN KEY (`id_movie`) REFERENCES `movie` (`id_movie`),
-  CONSTRAINT `fk_id_time_frame` FOREIGN KEY (`id_time_frame`) REFERENCES `time_frame` (`id_time_frame`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `show_time`
@@ -55,4 +34,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-22 20:24:23
+-- Dump completed on 2019-10-25 15:11:14

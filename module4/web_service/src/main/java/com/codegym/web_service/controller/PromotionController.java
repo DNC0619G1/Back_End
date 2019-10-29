@@ -53,4 +53,5 @@ public class PromotionController {
         List<Promotion> promotions = promotionService.searchPromotionByDate(startDate, endDate);
         return ResponseEntity.ok(promotions);
     }
+
 }

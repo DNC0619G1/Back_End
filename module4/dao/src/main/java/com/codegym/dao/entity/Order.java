@@ -25,9 +25,9 @@ public class Order {
     @ManyToOne
     private Account account;
     @ManyToOne
-    private Time time;
+    private TimeFrame time;
 
-    public Order( Movie movie,Integer totalPrice, Account account, Time time) {
+    public Order( Movie movie,Integer totalPrice, Account account, TimeFrame time) {
         this.totalPrice = totalPrice;
         this.movie = movie;
         this.account = account;
@@ -46,11 +46,11 @@ public class Order {
         this.movie = movie;
     }
 
-    public Time getTime() {
+    public TimeFrame getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(TimeFrame time) {
         this.time = time;
     }
 
