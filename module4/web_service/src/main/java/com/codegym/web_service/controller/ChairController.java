@@ -26,11 +26,11 @@ public class ChairController {
         Chair chair = chairService.getChairById(id);
         return new ResponseEntity<Chair>(chair, HttpStatus.OK);
     }
-    @GetMapping(value = {"/getmapchairs"})
-    private ResponseEntity<?> getMapChairs(){
-        Map<Integer,List<Chair>> mapChairs =chairService.getChairsMap();
-        return ResponseEntity.ok(mapChairs);
-    }
+//    @GetMapping(value = {"/getmapchairs"})
+//    private ResponseEntity<?> getMapChairs(){
+//        Map<Integer,List<Chair>> mapChairs =chairService.getChairsMap();
+//        return ResponseEntity.ok(mapChairs);
+//    }
 
     @PostMapping("/addchair")
     public ResponseEntity<Chair> createRoom(@Valid @RequestBody Chair chair) {

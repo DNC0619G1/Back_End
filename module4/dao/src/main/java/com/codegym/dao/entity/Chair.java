@@ -13,8 +13,11 @@ public class Chair {
     private int column;
     @Column(name = "chair_detail")
     private int idChairDetail=1;
-    @Column(name = "room")
-    private int idRoom;
+
+    @ManyToOne
+    @JoinColumn(name = "room")
+    private Room room;
+
     @Column(name = "status_chair")
     private int statusChair=1;
     @Column(name = "choise_status")
@@ -57,12 +60,12 @@ public class Chair {
         return choiseStatus;
     }
 
-    public int getIdRoom() {
-        return idRoom;
+    public Room getRoom() {
+        return room;
     }
 
-    public void setIdRoom(int idRoom) {
-        this.idRoom = idRoom;
+    public void setRoom(Room room) {
+        this.room = room;
     }
 
     public int getStatusChair() {

@@ -3,6 +3,7 @@ package com.codegym.dao.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
 import java.util.Date;
+
 @Entity
 @Table(name = "show_time")
 public class ShowTime {
@@ -10,15 +11,23 @@ public class ShowTime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_show_time")
     private int idTime;
-    @Column(name="id_movie")
-    private int idMovie;
+
+    @ManyToOne
+    @JoinColumn(name = "id_movie")// thông qua khóa ngoại id_movie
+    private Movie movie;
+
     @JsonFormat(pattern="dd/MM/yyyy", locale = "vi-VN", timezone = "Asia/Ho_Chi_Minh")
     @Column(name = "show_date")
     private Date showDate;
-    @Column(name="id_time_frame")
-    private int showTime;
-    @Column(name="room")
-    private int room;
+
+    @ManyToOne
+    @JoinColumn(name = "id_time_frame")
+    private TimeFrame showTime;
+
+    @ManyToOne
+    @JoinColumn(name = "room")
+    private Room room;
+
     public ShowTime() {
     }
     public int getIdTime() {
@@ -27,28 +36,33 @@ public class ShowTime {
     public void setIdTime(int idTime) {
         this.idTime = idTime;
     }
-    public int getIdMovie() {
-        return idMovie;
+
+    public Movie getMovie() {
+        return movie;
     }
-    public void setIdMovie(int idMovie) {
-        this.idMovie = idMovie;
+
+    public void setMovie(Movie movie) {
+        this.movie = movie;
     }
+
     public Date getShowDate() {
         return showDate;
     }
     public void setShowDate(Date showDate) {
         this.showDate = showDate;
     }
-    public int getShowTime() {
+    public TimeFrame getShowTime() {
         return showTime;
     }
-    public void setShowTime(int showTime) {
+    public void setShowTime(TimeFrame showTime) {
         this.showTime = showTime;
     }
-    public int getRoom() {
+
+    public Room getRoom() {
         return room;
     }
-    public void setRoom(int room) {
+
+    public void setRoom(Room room) {
         this.room = room;
     }
 }

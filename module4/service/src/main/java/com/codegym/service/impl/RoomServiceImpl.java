@@ -38,5 +38,9 @@ public class RoomServiceImpl implements RoomService {
         return roomRepository.findAll( pageable);
     }
 
+    @Override
+    public List<Room> getSearchRoom(String nameRoom) {
+        return roomRepository.findAllByNameRoomContaining(nameRoom);
+    }
 
 }

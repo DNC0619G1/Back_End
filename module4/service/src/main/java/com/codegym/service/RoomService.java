@@ -11,5 +11,6 @@ public interface RoomService {
     Room getRoomById(int id);
     void saveRoom(Room room);
     Page<Room> pageRoom (Pageable pageable);
+    List<Room> getSearchRoom(String nameRoom);
 
 }

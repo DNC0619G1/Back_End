@@ -20,7 +20,6 @@ public class ShowTimeController {
 
     @GetMapping(value = "/getShowTimes")
     private ResponseEntity<?> getShowTimes() {
-        System.out.println("abc");
         List<ShowTime> showTimes = showTimeService.getShowTimes();
         return ResponseEntity.ok(showTimes);
     }
