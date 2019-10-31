@@ -1,6 +1,8 @@
 package com.codegym.service;
 
 import com.codegym.dao.entity.Room;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -8,5 +10,7 @@ public interface RoomService {
     List<Room> getRooms();
     Room getRoomById(int id);
     void saveRoom(Room room);
-//    public void updateNameRoom(int id, String name);
+    Page<Room> pageRoom (Pageable pageable);
+    List<Room> getSearchRoom(String nameRoom);
+
 }
