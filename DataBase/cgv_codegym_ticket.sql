@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: cgv_codegym
+-- Host: localhost    Database: cgv_codegym
 -- ------------------------------------------------------
 -- Server version	8.0.17
 
@@ -14,6 +14,28 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `ticket`
+--
+
+DROP TABLE IF EXISTS `ticket`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ticket` (
+  `id_ticket` int(11) NOT NULL,
+  `name_ticket` varchar(255) NOT NULL,
+  `date_order_ticket` date NOT NULL,
+  `price_ticket` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `plus_point` int(11) NOT NULL,
+  `use_point` int(11) NOT NULL,
+  `ticket_id_user` int(11) NOT NULL,
+  PRIMARY KEY (`id_ticket`),
+  KEY `fk_id_user_idx` (`ticket_id_user`),
+  CONSTRAINT `fk_id_user` FOREIGN KEY (`ticket_id_user`) REFERENCES `user` (`id_user`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `ticket`
@@ -34,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-31 13:29:11
+

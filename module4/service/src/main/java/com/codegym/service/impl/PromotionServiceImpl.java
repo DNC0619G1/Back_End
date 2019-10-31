@@ -27,7 +27,7 @@ public class PromotionServiceImpl implements PromotionService {
 
     @Override
     public void removePromotion(int id) {
-         promotionRepository.deleteByIdPromotion(id);
+        promotionRepository.deleteByIdPromotion(id);
     }
 
 
@@ -45,4 +45,5 @@ public class PromotionServiceImpl implements PromotionService {
     public List<Promotion> searchPromotionByDate(Date startDate, Date endDate) {
         return promotionRepository.findAllByStartDateBetween(startDate, endDate);
     }
+}
 

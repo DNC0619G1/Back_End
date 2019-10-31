@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: cgv_codegym
+-- Host: localhost    Database: cgv_codegym
 -- ------------------------------------------------------
 -- Server version	8.0.17
 
@@ -14,6 +14,34 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `movie`
+--
+
+DROP TABLE IF EXISTS `movie`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `movie` (
+  `id_movie` int(11) NOT NULL,
+  `name_movie` varchar(255) NOT NULL,
+  `actor` varchar(255) NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `studio_movie` varchar(255) NOT NULL,
+  `duration` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `img_movie` text NOT NULL,
+  `trailer_movie` text NOT NULL,
+  `category_movie` text NOT NULL,
+  `opening_time` varchar(255) NOT NULL,
+  `catelory_movie` varchar(255) DEFAULT NULL,
+  `showings` varchar(255) DEFAULT NULL,
+  `order_id_order` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_movie`),
+  KEY `FKixulggx6wficfjq8su38vexsd` (`order_id_order`),
+  CONSTRAINT `FKixulggx6wficfjq8su38vexsd` FOREIGN KEY (`order_id_order`) REFERENCES `order` (`id_order`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `movie`
@@ -34,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-31 13:29:09
+

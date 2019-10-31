@@ -1,7 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
 --
-
--- ------------------------------------------------------
+----------------------------
 -- Server version	8.0.17
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -26,7 +25,7 @@ DROP TABLE IF EXISTS `room`;
 CREATE TABLE `room` (
   `id_room` int(11) NOT NULL AUTO_INCREMENT,
   `name_room` varchar(255) NOT NULL,
-  `description` varchar(255) DEFAULT NULL,
+
   PRIMARY KEY (`id_room`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -51,5 +50,3 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
-
