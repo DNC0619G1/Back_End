@@ -53,7 +53,9 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Thanh Lam','123456','Lê Thanh Lâm','1996-11-30','Man','thanhlam3096@gmail.com','69696969',90999666,'30 Pho My Hung','VIP-CGV01',69996,3,NULL),(2,'Toan De Lam','123123','Toan 5cm','1987-10-11','Woman','toam@yahoo.com','12512512',252512412,'14 Ga','MEMBER-CGV2',1112,3,NULL),(3,'Chuc SIDA','123456789','Chực 10cm','1991-07-11','Man','chucHIV@gamil.com','21412125',184629213,'100 Cho','MEMBER-CGV1',1411,3,NULL),(4,'Quoc WEAK','1241241','Quốc 1 phút','1997-05-09','Woman','quoc30s@gmail.com','56842361',125667927,'20 Chuot','Slave-CGV-01',112,3,NULL);
+
+INSERT INTO `user` VALUES (1,'Thanh Lam','123456','Lê Thanh Lâm','1996-11-30','Man','thanhlam3096@gmail.com','69696969',90999666,'69 Phố Mỹ Hưng','VIP-CGV01',69996,3),(2,'Toan De Lam','123123','Toan 5cm','1987-10-11','Woman','toam@yahoo.com','12512512',252512412,'14 Ga','MEMBER-CGV2',1112,3),(3,'Chuc SIDA','123456789','Chực 10cm','1991-07-11','Man','chucHIV@gamil.com','21412125',184629213,'100 Cho','MEMBER-CGV1',1411,3),(4,'Quoc WEAK','1241241','Quốc 1 phút','1997-05-09','Woman','quoc30s@gmail.com','56842361',125667927,'20 Chuot','Slave-CGV-01',112,3);
+
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -66,4 +68,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-31 13:47:32
+

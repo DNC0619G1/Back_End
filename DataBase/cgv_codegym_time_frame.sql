@@ -26,14 +26,11 @@ CREATE TABLE `time_frame` (
   `id_time_frame` int(11) NOT NULL AUTO_INCREMENT,
   `time` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
-  `chair` varchar(255) DEFAULT NULL,
-  `screen` varchar(255) DEFAULT NULL,
-  `show_date` varchar(255) DEFAULT NULL,
-  `show_dime` varchar(255) DEFAULT NULL,
-  `total` varchar(255) DEFAULT NULL,
+
   PRIMARY KEY (`id_time_frame`),
   UNIQUE KEY `id_time_frame_UNIQUE` (`id_time_frame`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +39,11 @@ CREATE TABLE `time_frame` (
 
 LOCK TABLES `time_frame` WRITE;
 /*!40000 ALTER TABLE `time_frame` DISABLE KEYS */;
+
 INSERT INTO `time_frame` VALUES (1,'10',1,NULL,NULL,NULL,NULL,NULL),(2,'11',1,NULL,NULL,NULL,NULL,NULL),(3,'12',1,NULL,NULL,NULL,NULL,NULL),(4,'13',1,NULL,NULL,NULL,NULL,NULL);
+
+INSERT INTO `time_frame` VALUES (1,'10:00',40000),(2,'11:00',40000),(3,'12:00',40000),(4,'13:00',40000),(5,'14:00',40000),(6,'15:00',45000),(7,'16:00',45000),(8,'17:00',45000),(9,'18:00',45000),(10,'19:00',45000);
+
 /*!40000 ALTER TABLE `time_frame` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-31 13:47:31
+
