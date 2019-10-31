@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `promotion`
+-- Dumping data for table `booking`
 --
 
-LOCK TABLES `promotion` WRITE;
-/*!40000 ALTER TABLE `promotion` DISABLE KEYS */;
-INSERT INTO `promotion` VALUES (1,'Khuyến mại năm mới','2019-01-01','2019-01-10',50000,'Giảm giá chào mừng năm mới'),(2,'Khuyến mại 20/10','2019-10-18','2019-10-22',30000,'Giảm giá chào mừng ngày tôn vinh phụ nữ Việt Nam'),(3,'Khuyến mại 20/11','2019-11-18','2019-11-22',20000,'Giảm giá chào mừng ngày nhà giáo Việt Nam');
-/*!40000 ALTER TABLE `promotion` ENABLE KEYS */;
+LOCK TABLES `booking` WRITE;
+/*!40000 ALTER TABLE `booking` DISABLE KEYS */;
+INSERT INTO `booking` VALUES (1,1,1,'2019-10-22');
+/*!40000 ALTER TABLE `booking` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

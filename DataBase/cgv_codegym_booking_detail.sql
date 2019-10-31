@@ -16,13 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `promotion`
+-- Dumping data for table `booking_detail`
 --
 
-LOCK TABLES `promotion` WRITE;
-/*!40000 ALTER TABLE `promotion` DISABLE KEYS */;
-INSERT INTO `promotion` VALUES (1,'Khuyến mại năm mới','2019-01-01','2019-01-10',50000,'Giảm giá chào mừng năm mới'),(2,'Khuyến mại 20/10','2019-10-18','2019-10-22',30000,'Giảm giá chào mừng ngày tôn vinh phụ nữ Việt Nam'),(3,'Khuyến mại 20/11','2019-11-18','2019-11-22',20000,'Giảm giá chào mừng ngày nhà giáo Việt Nam');
-/*!40000 ALTER TABLE `promotion` ENABLE KEYS */;
+LOCK TABLES `booking_detail` WRITE;
+/*!40000 ALTER TABLE `booking_detail` DISABLE KEYS */;
+/*!40000 ALTER TABLE `booking_detail` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -34,4 +33,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-31 13:29:12
+-- Dump completed on 2019-10-31 13:29:08
