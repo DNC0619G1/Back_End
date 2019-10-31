@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: cgv_codegym
+-- Host: localhost    Database: cgv_codegym
 -- ------------------------------------------------------
 -- Server version	8.0.17
 
@@ -16,12 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `time_frame`
+--
+
+DROP TABLE IF EXISTS `time_frame`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `time_frame` (
+  `id_time_frame` int(11) NOT NULL AUTO_INCREMENT,
+  `time` varchar(255) NOT NULL,
+  `price` int(11) NOT NULL,
+  `chair` varchar(255) DEFAULT NULL,
+  `screen` varchar(255) DEFAULT NULL,
+  `show_date` varchar(255) DEFAULT NULL,
+  `show_dime` varchar(255) DEFAULT NULL,
+  `total` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_time_frame`),
+  UNIQUE KEY `id_time_frame_UNIQUE` (`id_time_frame`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `time_frame`
 --
 
 LOCK TABLES `time_frame` WRITE;
 /*!40000 ALTER TABLE `time_frame` DISABLE KEYS */;
-INSERT INTO `time_frame` VALUES (1,'10',1),(2,'11',1),(3,'12',1),(4,'13',1);
+INSERT INTO `time_frame` VALUES (1,'10',1,NULL,NULL,NULL,NULL,NULL),(2,'11',1,NULL,NULL,NULL,NULL,NULL),(3,'12',1,NULL,NULL,NULL,NULL,NULL),(4,'13',1,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `time_frame` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -34,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-25 15:11:15
+-- Dump completed on 2019-10-31 13:47:31
