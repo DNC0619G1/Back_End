@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: cgv_codegym
+-- Host: 127.0.0.1    Database: cgv_codegym
 -- ------------------------------------------------------
 -- Server version	8.0.17
 
@@ -16,29 +16,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `time_frame`
+-- Dumping data for table `booking_detail`
 --
 
-DROP TABLE IF EXISTS `time_frame`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `time_frame` (
-  `id_time_frame` int(11) NOT NULL AUTO_INCREMENT,
-  `time` varchar(255) NOT NULL,
-  `price` int(11) NOT NULL,
-  PRIMARY KEY (`id_time_frame`),
-  UNIQUE KEY `id_time_frame_UNIQUE` (`id_time_frame`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `time_frame`
---
-
-LOCK TABLES `time_frame` WRITE;
-/*!40000 ALTER TABLE `time_frame` DISABLE KEYS */;
-INSERT INTO `time_frame` VALUES (1,'10:00',40000),(2,'11:00',40000),(3,'12:00',40000),(4,'13:00',40000),(5,'14:00',40000),(6,'15:00',45000),(7,'16:00',45000),(8,'17:00',45000),(9,'18:00',45000),(10,'19:00',45000);
-/*!40000 ALTER TABLE `time_frame` ENABLE KEYS */;
+LOCK TABLES `booking_detail` WRITE;
+/*!40000 ALTER TABLE `booking_detail` DISABLE KEYS */;
+/*!40000 ALTER TABLE `booking_detail` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +33,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-
+-- Dump completed on 2019-10-31 13:29:08

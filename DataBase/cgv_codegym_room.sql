@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: cgv_codegym
+
 -- ------------------------------------------------------
 -- Server version	8.0.17
 
@@ -16,6 +16,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+
 -- Table structure for table `room`
 --
 
@@ -30,13 +31,15 @@ CREATE TABLE `room` (
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `room`
---
+
 
 LOCK TABLES `room` WRITE;
 /*!40000 ALTER TABLE `room` DISABLE KEYS */;
+
+INSERT INTO `room` VALUES (1,'banana','tầng 1'),(2,'carrot','tang 2 asd'),(3,'cherry','tang 3');
+
 INSERT INTO `room` VALUES (1,'banana','tầng 1'),(2,'carrot','tang 2 asd'),(3,'cherry','tang 3'),(7,'chuc','tang 4 dsaadasdas'),(8,'haha','asdad'),(9,'sa','asdad'),(10,'1213','adsa'),(11,'chucga','1223131231'),(12,'12313131231','321312313123131313');
+
 /*!40000 ALTER TABLE `room` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-30  8:32:53
+

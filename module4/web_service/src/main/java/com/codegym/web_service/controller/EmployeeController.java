@@ -58,7 +58,8 @@ public class EmployeeController {
         employeeService.removeEmployee(idEmployee);
         return ResponseEntity.ok("Delete");
     }
-//    @DeleteMapping(value = {"/employees/delete/{idEmployee}"})
+
+    //    @DeleteMapping(value = {"/employees/delete/{idEmployee}"})
 //    public Map<String, Boolean> deleteEmployee(@PathVariable(value = "idEmployee") Long idEmployee) {
 //        EmployeeDTO employeeDTO = employeeService.findByIdEmployee(idEmployee);
 //        employeeService.removeEmployee(employeeDTO.getIdEmployee());
@@ -66,4 +67,9 @@ public class EmployeeController {
 //        response.put("deleted", Boolean.TRUE);
 //        return response;
 //    }
+    @GetMapping(value = {"/employees/search/{nameEmployee}"})
+    public ResponseEntity<?> getEmployeeByName(@PathVariable("nameEmployee") String nameEmployee) {
+        List<Employee> employees = employeeService.searchEmployee(nameEmployee);
+        return ResponseEntity.ok(employees);
+    }
 }
