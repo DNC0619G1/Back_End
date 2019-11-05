@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: cgv_codegym
+-- Host: localhost    Database: cgv_codegym
 -- ------------------------------------------------------
 -- Server version	8.0.17
 
@@ -14,6 +14,29 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `account`
+--
+
+DROP TABLE IF EXISTS `account`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `account` (
+  `id_account` int(11) NOT NULL AUTO_INCREMENT,
+  `cmnd` varchar(255) DEFAULT NULL,
+  `ticket_specials` varchar(255) DEFAULT NULL,
+  `author` varchar(255) DEFAULT NULL,
+  `catelory_movie` varchar(255) DEFAULT NULL,
+  `duration` varchar(255) DEFAULT NULL,
+  `id_role` int(11) DEFAULT NULL,
+  `membership_code` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `user` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_account`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `account`
@@ -33,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-25 15:11:14
+

@@ -31,12 +31,14 @@ CREATE TABLE `chair` (
   `position` varchar(255) NOT NULL,
   `price_type_chair` int(11) NOT NULL,
   `type` varchar(255) NOT NULL,
+
   `choise_status` tinyint(1) NOT NULL,
   `chair_detail` int(11) NOT NULL,
   PRIMARY KEY (`id_chair`),
   KEY `roomfk_idx` (`room`),
   CONSTRAINT `roomchairfk` FOREIGN KEY (`room`) REFERENCES `room` (`id_room`)
 ) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +47,12 @@ CREATE TABLE `chair` (
 
 LOCK TABLES `chair` WRITE;
 /*!40000 ALTER TABLE `chair` DISABLE KEYS */;
+
+
+INSERT INTO `chair` VALUES (1,1,1,1,0,'A1',0,'VIP',0,2),(2,2,1,2,1,'A2',10000,'VIP',0,2),(3,3,1,2,1,'A3',0,'VIP',0,2),(4,4,1,2,1,'A4',0,'VIP',0,2),(5,5,1,2,1,'A5',0,'VIP',0,2),(73,1,2,2,1,'B1',0,'Normal',0,1),(74,2,2,2,1,'B2',0,'Normal',0,1),(78,3,2,2,1,'B3',0,'Normal',0,1),(79,1,3,2,1,'C1',0,'Normal',0,1),(80,1,1,2,1,'A1',10000,'VIP',0,2),(81,2,1,1,1,'A2',10000,'VIP',0,2),(82,1,4,2,1,'D1',0,'Normal',0,1),(83,3,1,1,1,'A3',10000,'VIP',0,2),(84,4,1,1,1,'A4',10000,'VIP',0,2),(85,5,1,1,1,'A5',10000,'VIP',0,2),(86,6,1,1,1,'A6',10000,'VIP',0,2),(87,7,1,1,1,'A7',10000,'VIP',0,2),(88,1,2,1,1,'B1',0,'Normal',0,1),(89,2,2,1,1,'B2',0,'Normal',0,1),(91,4,2,1,1,'B4',0,'Normal',0,1),(92,5,2,1,1,'B5',0,'Normal',0,1),(93,6,2,1,1,'B6',0,'Normal',0,1),(97,2,3,1,1,'C2',0,'Normal',0,1),(99,1,4,1,1,'D1',0,'Normal',0,1),(100,3,2,1,1,'B3',0,'Normal',0,1),(101,4,4,1,1,'D4',0,'Normal',0,1),(102,2,4,1,1,'D2',0,'Normal',0,1),(103,3,4,1,1,'D3',0,'Normal',0,1),(104,3,3,1,1,'C3',0,'Normal',0,1),(105,4,3,1,1,'C4',0,'Normal',0,1),(107,7,2,1,1,'B7',0,'Normal',0,1),(108,7,4,1,1,'D7',0,'Normal',0,1),(111,1,3,1,1,'C1',0,'Normal',0,1),(112,1,1,3,1,'A1',10000,'VIP',0,2),(113,2,1,3,1,'A2',10000,'VIP',0,2),(114,3,1,3,1,'A3',10000,'VIP',0,2),(115,4,1,3,1,'A4',10000,'VIP',0,2),(116,5,1,3,1,'A5',10000,'VIP',0,2),(117,6,1,3,1,'A6',10000,'VIP',0,2),(118,5,4,2,1,'D5',0,'Normal',0,1);
+
 INSERT INTO `chair` VALUES (1,1,1,1,0,'A1',0,'VIP',0,2),(2,2,1,2,1,'A2',10000,'VIP',0,2),(3,3,1,2,1,'A3',0,'VIP',0,2),(4,4,1,2,1,'A4',0,'VIP',0,2),(5,5,1,2,1,'A5',0,'VIP',0,2),(73,1,2,2,1,'B1',0,'Normal',0,1),(74,2,2,2,1,'B2',0,'Normal',0,1),(78,3,2,2,1,'B3',0,'Normal',0,1),(79,1,3,2,1,'C1',0,'Normal',0,1),(80,1,1,2,1,'A1',10000,'VIP',0,2),(81,2,1,1,1,'A2',10000,'VIP',0,2),(82,1,4,2,1,'D1',0,'Normal',0,1),(83,3,1,1,1,'A3',10000,'VIP',0,2),(84,4,1,1,1,'A4',10000,'VIP',0,2),(85,5,1,1,1,'A5',10000,'VIP',0,2),(86,6,1,1,1,'A6',10000,'VIP',0,2),(87,7,1,1,1,'A7',10000,'VIP',0,2),(88,1,2,1,1,'B1',0,'Normal',0,1),(89,2,2,1,1,'B2',0,'Normal',0,1),(91,4,2,1,1,'B4',0,'Normal',0,1),(92,5,2,1,1,'B5',0,'Normal',0,1),(93,6,2,1,1,'B6',0,'Normal',0,1),(95,1,3,1,1,'C1',0,'Normal',0,1),(97,2,3,1,1,'C2',0,'Normal',0,1),(99,1,4,1,1,'D1',0,'Normal',0,1),(100,3,2,1,1,'B3',0,'Normal',0,1),(101,4,4,1,1,'D4',0,'Normal',0,1),(102,2,4,1,1,'D2',0,'Normal',0,1),(103,3,4,1,1,'D3',0,'Normal',0,1);
+
 /*!40000 ALTER TABLE `chair` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +65,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-30  8:32:53
+
