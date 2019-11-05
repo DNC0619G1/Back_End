@@ -30,4 +30,5 @@ public class ShowTimeController {
         ShowTime showTime = showTimeService.getById(id);
         return new ResponseEntity<ShowTime>(showTime, HttpStatus.OK);
     }
+
 }

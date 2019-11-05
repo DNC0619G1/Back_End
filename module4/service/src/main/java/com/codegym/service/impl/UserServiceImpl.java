@@ -104,6 +104,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save(UserDTO userDTO) {
         User user = new User();
+        user.setUserName(userDTO.getUserName());
+        user.setPassword(userDTO.getPassword());
         user.setFullName(userDTO.getFullName());
         user.setBirthDay(userDTO.getBirthDay());
         user.setSex(userDTO.getSex());
@@ -111,6 +113,9 @@ public class UserServiceImpl implements UserService {
         user.setLicense(userDTO.getLicense());
         user.setNumberPhone(userDTO.getNumberPhone());
         user.setAddress(userDTO.getAddress());
+        user.setNameMemberCard(userDTO.getNameMemberCard());
+        user.setPoint(userDTO.getPoint());
+        user.setId_role(userDTO.getId_role());
         userRepository.save(user);
     }
 }
