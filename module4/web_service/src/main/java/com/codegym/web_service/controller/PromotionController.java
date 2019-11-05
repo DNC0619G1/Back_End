@@ -36,6 +36,7 @@ public class PromotionController {
         return ResponseEntity.ok("delete ok");
     }
 
+
     @PostMapping(value={"/add"})
     public ResponseEntity<Promotion> addPromotion(@RequestBody Promotion promotion){
         promotionService.savePromotion(promotion);
@@ -53,5 +54,6 @@ public class PromotionController {
         List<Promotion> promotions = promotionService.searchPromotionByDate(startDate, endDate);
         return ResponseEntity.ok(promotions);
     }
+
 
 }

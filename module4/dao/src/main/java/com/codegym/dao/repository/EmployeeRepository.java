@@ -9,5 +9,7 @@ import java.util.List;
 public interface EmployeeRepository extends CrudRepository<Employee,Long> {
     Employee findByIdEmployee(Long idEmployee);
 
+
     List<Employee> findAllByNameEmployeeContaining(String nameEmployee);
+
 }
