@@ -30,6 +30,14 @@ public class ShowTime {
 
     public ShowTime() {
     }
+
+    public ShowTime(Movie movie, Date showDate, TimeFrame showTime, Room room) {
+        this.movie = movie;
+        this.showDate = showDate;
+        this.showTime = showTime;
+        this.room = room;
+    }
+
     public int getIdTime() {
         return idTime;
     }
@@ -65,4 +73,5 @@ public class ShowTime {
     public void setRoom(Room room) {
         this.room = room;
     }
+
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -33,4 +34,10 @@ public class PromotionController {
         promotionService.removePromotion(id);
         return ResponseEntity.ok("delete ok");
     }
+//    @GetMapping(value={"/a"})
+//    public ResponseEntity<?> getAllPromotionByEndDate( Date date) {
+//        date =new Date();
+//        Promotion promotion = promotionService.getAllPromotionByEndDate(date);
+//        return ResponseEntity.ok(promotion);
+//    }
 }

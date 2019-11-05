@@ -1,5 +1,6 @@
 package com.codegym.dao.entity;
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table (name="promotion")
@@ -11,18 +12,28 @@ public class Promotion {
 
     private String titlePromotion;
 
-    private String startDate;
+    private Date startDate;
 
-    private String endDate;
+    private Date endDate;
 
     private int saleOff;
 
     private String detailPromotion;
 
+    private String imgPromotion;
+
+    public String getImgPromotion() {
+        return imgPromotion;
+    }
+
+    public void setImgPromotion(String imgPromotion) {
+        this.imgPromotion = imgPromotion;
+    }
+
     public Promotion() {
     }
 
-    public Promotion(String titlePromotion, String startDate, String endDate, int saleOff, String detailPromotion) {
+    public Promotion(String titlePromotion, Date startDate, Date endDate, int saleOff, String detailPromotion) {
         this.titlePromotion = titlePromotion;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -46,19 +57,19 @@ public class Promotion {
         this.titlePromotion = titlePromotion;
     }
 
-    public String getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public String getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 
