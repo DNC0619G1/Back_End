@@ -100,7 +100,18 @@ public class UserServiceImpl implements UserService {
         }
         userRepository.save(user);
     }
-
+    public String randomString(int dodai){
+        String ketqua = "";
+        String hoa =  "QWERTYUIOPASDFGHJKLZXCVBNM";
+        String thuong = hoa.toLowerCase();
+        String so = "1234567890";
+        String randomchuoi = hoa + thuong + so;
+        for(int i=0;i < dodai ;i++){
+            int temp = (int)Math.round(Math.random() * randomchuoi.length());
+            ketqua += randomchuoi.charAt(temp);
+        }
+        return ketqua;
+    }
     @Override
     public void save(UserDTO userDTO) {
         User user = new User();
@@ -113,7 +124,7 @@ public class UserServiceImpl implements UserService {
         user.setLicense(userDTO.getLicense());
         user.setNumberPhone(userDTO.getNumberPhone());
         user.setAddress(userDTO.getAddress());
-        user.setNameMemberCard(userDTO.getNameMemberCard());
+        user.setNameMemberCard(userDTO.getNameMemberCard() + userDTO.getFullName() + randomString(6));
         user.setPoint(userDTO.getPoint());
         user.setId_role(userDTO.getId_role());
         userRepository.save(user);

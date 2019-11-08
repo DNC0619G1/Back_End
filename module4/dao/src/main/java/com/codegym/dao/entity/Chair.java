@@ -12,30 +12,23 @@ public class Chair {
     @Column(name = "column_chair")
     private int column;
     @Column(name = "chair_detail")
-    private int idChairDetail;
-    @Column(name = "room")
-    private String room;
+    private int idChairDetail=1;
+
+    @ManyToOne
+    @JoinColumn(name = "room")
+    private Room room;
+
     @Column(name = "status_chair")
-    private int statusChair;
+    private int statusChair=1;
     @Column(name = "choise_status")
-    private boolean choiseStatus;
+    private boolean choiseStatus=false;
     @Column(name = "position")
     private String position;
     @Column(name = "price_type_chair")
     private int priceChairType;
     @Column(name = "type")
     private String type;
-    public Chair(int row, int column, int idChairDetail, String room, int statusChair, boolean choiseStatus, String position, int priceChairType, String type) {
-        this.row = row;
-        this.column = column;
-        this.idChairDetail = idChairDetail;
-        this.room = room;
-        this.statusChair = statusChair;
-        this.choiseStatus = choiseStatus;
-        this.position = position;
-        this.priceChairType = priceChairType;
-        this.type = type;
-    }
+
     public Chair() {
     }
     public int getIdChair() {
@@ -62,12 +55,19 @@ public class Chair {
     public void setIdChairDetail(int idChairDetail) {
         this.idChairDetail = idChairDetail;
     }
-    public String getRoom() {
+
+    public boolean isChoiseStatus() {
+        return choiseStatus;
+    }
+
+    public Room getRoom() {
         return room;
     }
-    public void setRoom(String room) {
+
+    public void setRoom(Room room) {
         this.room = room;
     }
+
     public int getStatusChair() {
         return statusChair;
     }

@@ -12,29 +12,33 @@ public class Promotion {
 
     private String titlePromotion;
 
-    @Temporal(TemporalType.DATE)
     private Date startDate;
 
-    @Temporal(TemporalType.DATE)
     private Date endDate;
 
     private int saleOff;
 
-    @Column(name = "detail_promotion")
     private String detailPromotion;
 
     private String imgPromotion;
 
+    public String getImgPromotion() {
+        return imgPromotion;
+    }
+
+    public void setImgPromotion(String imgPromotion) {
+        this.imgPromotion = imgPromotion;
+    }
+
     public Promotion() {
     }
 
-    public Promotion(String titlePromotion, Date startDate, Date endDate, int saleOff, String detailPromotion, String imgPromotion) {
+    public Promotion(String titlePromotion, Date startDate, Date endDate, int saleOff, String detailPromotion) {
         this.titlePromotion = titlePromotion;
         this.startDate = startDate;
         this.endDate = endDate;
         this.saleOff = saleOff;
         this.detailPromotion = detailPromotion;
-        this.imgPromotion = imgPromotion;
     }
 
     public int getIdPromotion() {
@@ -83,13 +87,5 @@ public class Promotion {
 
     public void setDetailPromotion(String detailPromotion) {
         this.detailPromotion = detailPromotion;
-    }
-
-    public String getImgPromotion() {
-        return imgPromotion;
-    }
-
-    public void setImgPromotion(String imgPromotion) {
-        this.imgPromotion = imgPromotion;
     }
 }
