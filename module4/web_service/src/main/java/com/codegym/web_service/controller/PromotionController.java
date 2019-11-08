@@ -34,10 +34,10 @@ public class PromotionController {
         promotionService.removePromotion(id);
         return ResponseEntity.ok("delete ok");
     }
-//    @GetMapping(value={"/a"})
-//    public ResponseEntity<?> getAllPromotionByEndDate( Date date) {
-//        date =new Date();
-//        Promotion promotion = promotionService.getAllPromotionByEndDate(date);
-//        return ResponseEntity.ok(promotion);
-//    }
+    @GetMapping(value={"/afterenddate"})
+    public ResponseEntity<?> getAllPromotionByEndDate( Date date) {
+        date =new Date();
+        List<Promotion> promotions = promotionService.getAllPromotionByEndDate(date);
+        return ResponseEntity.ok(promotions);
+    }
 }

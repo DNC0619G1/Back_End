@@ -5,11 +5,7 @@ import com.codegym.dao.repository.ChairRepository;
 import com.codegym.service.ChairService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 @Service
 class ChairServiceImpl implements ChairService {
@@ -50,27 +46,19 @@ class ChairServiceImpl implements ChairService {
     }
 
     @Override
-    public void updateChair(Chair chair) {
-
+    public Chair deleteChair(int idChair) {
+        Chair chair =chairRepository.findById(idChair).orElse(null);
+       chairRepository.deleteById(idChair);
+        return chair;
     }
 
     @Override
-    public void deleteChair(int idChair) {
-        chairRepository.deleteById(idChair);
+    public List<Chair> getChairByBookings(int id) {
+        return chairRepository.findAllByIdShowTime(id);
     }
 
-//    @Override
-//    public Map<Integer, List<Chair>> getChairsMap() {
-//        List<Chair> chairs = chairRepository.findAll();
-//        return chairs.stream()
-//                .collect(Collectors.toMap(Chair::getRoom().get,
-//                        p -> {
-//                            List<Chair> list = new ArrayList<>();
-//                            list.add(p);
-//                            return list;
-//                        }, (oldValue, newValue) -> {
-//                            newValue.addAll(oldValue);
-//                            return newValue;
-//                        }));
-//    }
+    @Override
+    public List<Chair> getChairByIdRoom(int id) {
+        return chairRepository.findAllByIdRoom(id);
+    }
 }
