@@ -6,4 +6,5 @@ import java.util.List;
 public interface BookingService {
     List<Booking> getBookings();
     void saveBooking(Booking booking);
+    Booking getBookingById(int id);
 }

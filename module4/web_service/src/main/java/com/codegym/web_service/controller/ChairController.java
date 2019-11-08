@@ -1,21 +1,22 @@
 package com.codegym.web_service.controller;
 
 import com.codegym.dao.entity.Chair;
+import com.codegym.dao.repository.ShowTimeRepository;
 import com.codegym.service.ChairService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ChairController {
     @Autowired
     public ChairService chairService;
+    @Autowired
+    public ShowTimeRepository showTimeRepository;
     @GetMapping(value = {"/getchairs"})
     private ResponseEntity<?> getChairs(){
         List<Chair> chairs =chairService.getChairs();
@@ -26,11 +27,6 @@ public class ChairController {
         Chair chair = chairService.getChairById(id);
         return new ResponseEntity<Chair>(chair, HttpStatus.OK);
     }
-//    @GetMapping(value = {"/getmapchairs"})
-//    private ResponseEntity<?> getMapChairs(){
-//        Map<Integer,List<Chair>> mapChairs =chairService.getChairsMap();
-//        return ResponseEntity.ok(mapChairs);
-//    }
 
     @PostMapping("/addchair")
     public ResponseEntity<Chair> createRoom(@Valid @RequestBody Chair chair) {
@@ -39,8 +35,19 @@ public class ChairController {
     }
     @DeleteMapping(value={"/deletechair/{idChair}"})
     public ResponseEntity<?> deletePromotion(@PathVariable("idChair") int idChair){
+        Chair chair =chairService.getChairById(idChair);
         chairService.deleteChair(idChair);
-        return ResponseEntity.ok("delete ok");
+        return ResponseEntity.ok(chair);
+    }
+    @GetMapping(value = {"/getchairlist/{id}"})
+    private ResponseEntity<?> getChairsByIdShowTime(@PathVariable int id){
+        List<Chair> chairLists =chairService.getChairByBookings(id);
+        return ResponseEntity.ok(chairLists);
     }
 
+    @GetMapping(value = {"/chairlist/{id}"})
+    private ResponseEntity<?> getChairsByIdRoom(@PathVariable int id){
+        List<Chair> getchairLists =chairService.getChairByIdRoom(id);
+        return ResponseEntity.ok(getchairLists);
+    }
 }
