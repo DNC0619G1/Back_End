@@ -4,6 +4,7 @@ import com.codegym.dao.dto.UserDTO;
 import com.codegym.dao.entity.User;
 import com.codegym.dao.repository.UserRepository;
 import com.codegym.service.UserService;
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -48,7 +49,7 @@ public class UserServiceImpl implements UserService {
             user.setPassword(user.getPassword());
         }
         else{
-            user.setPassword(userDTO.getPassword());
+            user.setPassword(BCrypt.hashpw(userDTO.getPassword(),BCrypt.gensalt(12)));
         }
         userRepository.save(user);
     }
@@ -116,7 +117,7 @@ public class UserServiceImpl implements UserService {
     public void save(UserDTO userDTO) {
         User user = new User();
         user.setUserName(userDTO.getUserName());
-        user.setPassword(userDTO.getPassword());
+        user.setPassword(BCrypt.hashpw(userDTO.getPassword(),BCrypt.gensalt(12)));
         user.setFullName(userDTO.getFullName());
         user.setBirthDay(userDTO.getBirthDay());
         user.setSex(userDTO.getSex());
