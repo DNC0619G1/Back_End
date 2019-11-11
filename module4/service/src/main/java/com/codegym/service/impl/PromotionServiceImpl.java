@@ -34,4 +34,29 @@ public class PromotionServiceImpl implements PromotionService {
     public void removePromotion(int id) {
         promotionRepository.deleteByIdPromotion(id);
     }
+
+    @Override
+    public Promotion savePromotion(Promotion promotion) {
+        return promotionRepository.save(promotion);
+    }
+
+    @Override
+    public List<Promotion> searchPromotion(String title) {
+        return promotionRepository.findAllByTitlePromotionContaining(title);
+    }
+
+    @Override
+    public List<Promotion> searchPromotionByDate(Date startDate, Date endDate) {
+        return promotionRepository.findAllByStartDateBetween(startDate, endDate);
+    }
+
+    @Override
+    public Promotion deletePromotion(int idPromotion) {
+        Promotion promotion = promotionRepository.findById(idPromotion).orElse(null);
+        List<Promotion> promotionList = promotionRepository.findAll();
+        promotionList.remove(promotion);
+        promotionRepository.saveAll(promotionList);
+        return promotion;
+    }
+
 }

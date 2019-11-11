@@ -40,4 +40,16 @@ public class PromotionController {
         List<Promotion> promotions = promotionService.getAllPromotionByEndDate(date);
         return ResponseEntity.ok(promotions);
     }
+
+    @GetMapping(value = {"/search1/{startDate, endDate}"})
+    public ResponseEntity<?> getPromotionByDate(@PathVariable("startDate, endDate") Date startDate, Date endDate){
+        List<Promotion> promotions = promotionService.searchPromotionByDate(startDate, endDate);
+        return ResponseEntity.ok(promotions);
+    }
+    @DeleteMapping(value={"/test/{id}"})
+    public ResponseEntity<?> testThoiMa(@PathVariable("id") int id){
+        promotionService.deletePromotion(id);
+        return ResponseEntity.ok(promotionService.deletePromotion(id));
+    }
+
 }

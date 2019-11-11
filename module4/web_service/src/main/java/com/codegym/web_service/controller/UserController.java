@@ -51,4 +51,17 @@ public class UserController {
         userService.updatePassword(userDTO);
         return ResponseEntity.ok(userDTO);
     }
+
+    @PutMapping(value={"/users/add/{idUser}"})
+    public ResponseEntity<User> addUser(@PathVariable(value = "idUser") Long idUser, @RequestBody User user){
+        user.setIdUser(idUser);
+        userService.saveUser(user);
+        return ResponseEntity.ok(user);
+    }
+
+    @GetMapping(value={"/users/search/{keyword}"})
+    public  ResponseEntity<?> getSearch(@PathVariable("keyword") String keyword){
+        List<User> users = userService.searchUser(keyword);
+        return ResponseEntity.ok(users);
+    }
 }

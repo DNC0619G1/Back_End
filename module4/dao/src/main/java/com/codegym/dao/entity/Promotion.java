@@ -12,7 +12,12 @@ public class Promotion {
 
     private String titlePromotion;
 
+
+
+    @Temporal(TemporalType.DATE)
+
     private Date startDate;
+
 
     private Date endDate;
 
