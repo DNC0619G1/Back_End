@@ -115,9 +115,4 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void removeEmployee(Long idEmployee) {
         employeeRepository.deleteById(idEmployee);
     }
-
-    @Override
-    public List<Employee> searchEmployee(String nameEmployee) {
-        return employeeRepository.findAllByNameEmployeeContaining(nameEmployee);
-    }
 }

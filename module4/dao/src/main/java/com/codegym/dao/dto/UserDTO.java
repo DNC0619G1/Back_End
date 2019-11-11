@@ -16,12 +16,12 @@ public class UserDTO implements Serializable {
     private String address;
     private String nameMemberCard;
     private int point;
-    private Long id_role;
+    private Long idRole;
     public UserDTO(){
 
     }
 
-    public UserDTO(Long idUser, String userName, String password, String fullName, Date birthDay, String sex, String email, int license, int numberPhone, String address, String nameMemberCard, int point, Long id_role) {
+    public UserDTO(Long idUser, String userName, String password, String fullName, Date birthDay, String sex, String email, int license, int numberPhone, String address, String nameMemberCard, int point, Long idRole) {
         this.idUser = idUser;
         this.userName = userName;
         this.password = password;
@@ -34,7 +34,7 @@ public class UserDTO implements Serializable {
         this.address = address;
         this.nameMemberCard = nameMemberCard;
         this.point = point;
-        this.id_role = id_role;
+        this.idRole = idRole;
     }
 
     public Long getIdUser() {
@@ -61,12 +61,12 @@ public class UserDTO implements Serializable {
         this.password = password;
     }
 
-    public Long getId_role() {
-        return id_role;
+    public Long getIdRole() {
+        return idRole;
     }
 
-    public void setId_role(Long id_role) {
-        this.id_role = id_role;
+    public void setIdRole(Long idRole) {
+        this.idRole = idRole;
     }
 
     public String getFullName() {

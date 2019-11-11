@@ -47,16 +47,13 @@ public class User {
     private int point;
 
     @Column(name = "id_role")
-    private Long id_role;
-
-//    @OneToOne(mappedBy = "card_member")
-//    private MemberCard memberCard;
+    private Long idRole;
 
     public User(){
 
     }
 
-    public User(String userName, String password, String fullName, Date birthDay, String sex, String email, int license, int numberPhone, String address, String nameMemberCard, int point, Long id_role) {
+    public User(String userName, String password, String fullName, Date birthDay, String sex, String email, int license, int numberPhone, String address, String nameMemberCard, int point, Long idRole) {
         this.userName = userName;
         this.password = password;
         this.fullName = fullName;
@@ -68,7 +65,7 @@ public class User {
         this.address = address;
         this.nameMemberCard = nameMemberCard;
         this.point = point;
-        this.id_role = id_role;
+        this.idRole = idRole;
     }
 
     public Long getIdUser() {
@@ -95,12 +92,12 @@ public class User {
         this.password = password;
     }
 
-    public Long getId_role() {
-        return id_role;
+    public Long getIdRole() {
+        return idRole;
     }
 
-    public void setId_role(Long id_role) {
-        this.id_role = id_role;
+    public void setIdRole(Long idRole) {
+        this.idRole = idRole;
     }
 
     public String getFullName() {

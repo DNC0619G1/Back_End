@@ -1,6 +1,6 @@
 package com.codegym.dao.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -21,11 +21,12 @@ public class Booking {
     @JoinColumn(name="id_user")
     private User user;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     @Column(name = "booking_date")
     private Date bookingDate;
 
-    public Booking() {
+    public Booking() {//khoi tao
     }
 
     public int getIdBooking() {

@@ -1,81 +1,80 @@
 package com.codegym.dao.entity;
-
+import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
-import java.util.List;
-import java.util.Set;
+import java.util.Date;
 
 @Entity
-@Table(name = "`order`", schema = "cinema_module4")
+@Table(name = "order")
 public class Order {
     @Id
-    @Column(name = "`id_order`")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idOrder;
-    //    @Column(name = "`id_account`")
-//   private Integer idAccount;
-//   @Column(name = "`id_movie`")
-//    private Integer idMovie;
-    @Column(name = "`total_price`")
-    private Integer totalPrice;
+    @Column(name = "id_order")
+    private int idOrder;
 
     @ManyToOne
-    @JoinColumn(name = "id_movie")
-    private Movie movie;
+    @JoinColumn(name ="id_show_time")
+    private ShowTime showTime;
 
     @ManyToOne
-    private Account account;
-    @ManyToOne
-    private TimeFrame time;
+    @JoinColumn(name="id_user")
+    private User user;
 
-    public Order( Movie movie,Integer totalPrice, Account account, TimeFrame time) {
-        this.totalPrice = totalPrice;
-        this.movie = movie;
-        this.account = account;
-        this.time = time;
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+    @Column(name = "date_order_ticket")
+    private Date dateOrderTicket;
+
+    @Column(name = "status")
+    private String  status;
+
+    public Order(){
+
     }
 
-    public Order() {
+    public Order(ShowTime showTime, User user, Date dateOrderTicket, String status) {
+        this.showTime = showTime;
+        this.user = user;
+        this.dateOrderTicket = dateOrderTicket;
+        this.status = status;
     }
 
-
-    public Movie getMovie() {
-        return movie;
-    }
-
-    public void setMovie(Movie movie) {
-        this.movie = movie;
-    }
-
-    public TimeFrame getTime() {
-        return time;
-    }
-
-    public void setTime(TimeFrame time) {
-        this.time = time;
-    }
-
-    public Integer getIdOrder() {
+    public int getIdOrder() {
         return idOrder;
     }
 
-    public void setIdOrder(Integer idOrder) {
+    public void setIdOrder(int idOrder) {
         this.idOrder = idOrder;
     }
 
-    public Integer getTotalPrice() {
-        return totalPrice;
+    public ShowTime getShowTime() {
+        return showTime;
     }
 
-    public void setTotalPrice(Integer totalPrice) {
-        this.totalPrice = totalPrice;
+    public void setShowTime(ShowTime showTime) {
+        this.showTime = showTime;
     }
 
-    public Account getAccount() {
-        return account;
+    public User getUser() {
+        return user;
     }
 
-    public void setAccount(Account account) {
-        this.account = account;
+    public void setUser(User user) {
+        this.user = user;
     }
 
+    public Date getDateOrderTicket() {
+        return dateOrderTicket;
+    }
+
+    public void setDateOrderTicket(Date dateOrderTicket) {
+        this.dateOrderTicket = dateOrderTicket;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

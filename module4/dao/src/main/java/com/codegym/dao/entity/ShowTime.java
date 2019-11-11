@@ -22,7 +22,7 @@ public class ShowTime {
 
     @ManyToOne
     @JoinColumn(name = "id_time_frame")
-    private TimeFrame showTime;
+    private TimeFrame timeFrame;
 
     @ManyToOne
     @JoinColumn(name = "room")
@@ -30,6 +30,14 @@ public class ShowTime {
 
     public ShowTime() {
     }
+
+    public ShowTime(Movie movie, Date showDate, TimeFrame showTime, Room room) {
+        this.movie = movie;
+        this.showDate = showDate;
+        this.timeFrame = showTime;
+        this.room = room;
+    }
+
     public int getIdTime() {
         return idTime;
     }
@@ -52,10 +60,10 @@ public class ShowTime {
         this.showDate = showDate;
     }
     public TimeFrame getShowTime() {
-        return showTime;
+        return timeFrame;
     }
     public void setShowTime(TimeFrame showTime) {
-        this.showTime = showTime;
+        this.timeFrame = showTime;
     }
 
     public Room getRoom() {
@@ -65,4 +73,5 @@ public class ShowTime {
     public void setRoom(Room room) {
         this.room = room;
     }
+
 }

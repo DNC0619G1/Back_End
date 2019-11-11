@@ -1,17 +1,13 @@
 package com.codegym.service;
 
-
-import com.codegym.dao.entity.Chair;
-
-import java.util.List;
-import java.util.Map;
-
+        import com.codegym.dao.entity.Chair;
+        import java.util.List;
 
 public interface ChairService {
     List<Chair> getChairs();
     Chair getChairById(int id);
     void saveChair(Chair chair);
-    void updateChair(Chair chair);
-    void deleteChair(int id);
-//    Map<Integer, List<Chair>> getChairsMap();
+    Chair deleteChair(int id);
+    List<Chair> getChairByBookings(int id);
+    List<Chair> getChairByIdRoom(int id);
 }

@@ -5,8 +5,6 @@ import com.codegym.service.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-//import java.util.Date;
 import java.sql.Date;
 import java.util.List;
 
@@ -50,30 +48,11 @@ public class TicketController {
     public ResponseEntity<List<Ticket>> getHitoryPoint(@PathVariable(value = "idUser") Long idUser,
                                                        @PathVariable(value = "startDate") String startDate,
                                                        @PathVariable(value = "endDate") String endDate) {
-//        String sd = "2017-07-15";
-        //        String ed = "2019-12-02";
         Date startDate1 = Date.valueOf(startDate);
         Date endDate1 = Date.valueOf(endDate);
         List<Ticket> ticket = ticketService.findByUserAndDateOrderTicketIsBetween(idUser, startDate1, endDate1);
         return ResponseEntity.ok().body(ticket);
     }
 
-    //    @GetMapping("/testPointHistory/{idUser}")
-//    public ResponseEntity<List<Ticket>> getHitoryPointTest(@PathVariable(value = "idUser") Long idUser, Date startDate, Date endDate) {
-////        String sd = "2019-01-02";
-////        String ed = "2019-12-02";
-////        Date startDate1 = Date.valueOf(sd);
-////        Date endDate1 = Date.valueOf(ed);
-//        List<Ticket> ticket = ticketService.findByUserAndDateOrderTicket(idUser, startDate, endDate);
-//        return ResponseEntity.ok().body(ticket);
-//    }
-//    @GetMapping("/testPointHistory/{idUser}/{startDate}/{endDate}")
-//    public ResponseEntity<List<Ticket>> getHitoryPointTest(@PathVariable(value = "idUser") Long idUser,
-//                                                           @PathVariable(value = "startDate") String startDate,
-//                                                           @PathVariable(value = "endDate") String endDate) {
-//        Date startDate1 = Date.valueOf(startDate);
-//        Date endDate1 = Date.valueOf(endDate);
-//        List<Ticket> ticket = ticketService.findIdUserDateOrderPoint(idUser, startDate1, endDate1);
-//        return ResponseEntity.ok().body(ticket);
-//    }
+
 }

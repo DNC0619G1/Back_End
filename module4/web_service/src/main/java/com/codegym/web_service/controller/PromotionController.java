@@ -1,7 +1,6 @@
 package com.codegym.web_service.controller;
 import com.codegym.dao.entity.Movie;
 import com.codegym.dao.entity.Promotion;
-import com.codegym.dao.repository.PromotionRepository;
 import com.codegym.service.MovieService;
 import com.codegym.service.PromotionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,16 +34,10 @@ public class PromotionController {
         promotionService.removePromotion(id);
         return ResponseEntity.ok("delete ok");
     }
-
-    @PostMapping(value={"/add"})
-    public ResponseEntity<Promotion> addPromotion(@RequestBody Promotion promotion){
-        promotionService.savePromotion(promotion);
-        return ResponseEntity.ok(promotion);
-    }
-
-    @GetMapping(value={"/search/{title}"})
-    public ResponseEntity<?> getPromotionByTitle(@PathVariable("title") String title){
-        List<Promotion> promotions = promotionService.searchPromotion(title);
+    @GetMapping(value={"/afterenddate"})
+    public ResponseEntity<List<Promotion>> getAllPromotionByEndDate() {
+        Date date =new Date();
+        List<Promotion> promotions = promotionService.getAllPromotionByEndDate(date);
         return ResponseEntity.ok(promotions);
     }
 
@@ -58,4 +51,5 @@ public class PromotionController {
         promotionService.deletePromotion(id);
         return ResponseEntity.ok(promotionService.deletePromotion(id));
     }
+
 }

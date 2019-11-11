@@ -12,15 +12,28 @@ public class Promotion {
 
     private String titlePromotion;
 
-    @Temporal(TemporalType.DATE)
-    private Date startDate;
+
 
     @Temporal(TemporalType.DATE)
+
+    private Date startDate;
+
+
     private Date endDate;
 
     private int saleOff;
 
     private String detailPromotion;
+
+    private String imgPromotion;
+
+    public String getImgPromotion() {
+        return imgPromotion;
+    }
+
+    public void setImgPromotion(String imgPromotion) {
+        this.imgPromotion = imgPromotion;
+    }
 
     public Promotion() {
     }

@@ -27,6 +27,11 @@ public class UserController {
 
         return users;
     }
+    @PostMapping("/users")
+    public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO) {
+        userService.save(userDTO);
+        return ResponseEntity.ok(userDTO);
+    }
     @GetMapping("/users/showAndUpdate/{idUser}")
     public ResponseEntity<UserDTO> getUserById(@PathVariable(value = "idUser") Long idUser) {
         UserDTO userDTO = userService.findByIdUser(idUser);
