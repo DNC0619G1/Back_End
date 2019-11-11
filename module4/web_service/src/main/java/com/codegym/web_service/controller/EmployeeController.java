@@ -5,13 +5,8 @@ import com.codegym.dao.dto.EmployeeDTO;
 import com.codegym.dao.entity.Employee;
 import com.codegym.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.HashMap;
-import java.util.Map;
-
 import java.util.List;
 
 @RestController
@@ -33,12 +28,6 @@ public class EmployeeController {
         employeeService.save(employeeDTO);
         return ResponseEntity.ok(employeeDTO);
     }
-
-    //    @PostMapping("/employees")
-//    public ResponseEntity<Employee> createEmployee( @RequestBody Employee employee){
-//        employeeService.save(employee);
-//        return ResponseEntity.ok(employee);
-//    }
     @GetMapping("/employees/details/{idEmployee}")
     public ResponseEntity<EmployeeDTO> getEmployeeByIdEmployee(@PathVariable(value = "idEmployee") Long idEmployee) {
         EmployeeDTO employeeDTO = employeeService.findByIdEmployee(idEmployee);
@@ -58,12 +47,4 @@ public class EmployeeController {
         employeeService.removeEmployee(idEmployee);
         return ResponseEntity.ok("Delete");
     }
-//    @DeleteMapping(value = {"/employees/delete/{idEmployee}"})
-//    public Map<String, Boolean> deleteEmployee(@PathVariable(value = "idEmployee") Long idEmployee) {
-//        EmployeeDTO employeeDTO = employeeService.findByIdEmployee(idEmployee);
-//        employeeService.removeEmployee(employeeDTO.getIdEmployee());
-//        Map<String, Boolean> response = new HashMap<>();
-//        response.put("deleted", Boolean.TRUE);
-//        return response;
-//    }
 }

@@ -34,4 +34,5 @@ public class ShowTimeController {
         Map<String, List<ShowTime>> mapShowTimes = showTimeService.mapShowTimes();
         return ResponseEntity.ok(mapShowTimes);
     }
+
 }

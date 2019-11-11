@@ -3,8 +3,6 @@ package com.codegym.dao.repository;
 import com.codegym.dao.entity.Ticket;
 import com.codegym.dao.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-
 import java.util.Date;
 import java.util.List;
 

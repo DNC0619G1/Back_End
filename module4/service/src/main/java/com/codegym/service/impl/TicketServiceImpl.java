@@ -20,34 +20,30 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     public List<Ticket> findAll() {
-        return (List<Ticket>) ticketRepository.findAll();
+        return  ticketRepository.findAll();
     }
 
     @Override
     public List<Ticket> findByUser(Long idUser) {
         User user = userRepository.findByIdUser(idUser);
-        List<Ticket> ticket = ticketRepository.findByUser(user);
-        return ticket;
+        return ticketRepository.findByUser(user);
     }
     @Override
-    public List<Ticket> findByUserAndStatusIs(Long idUser,String Status) {
+    public List<Ticket> findByUserAndStatusIs(Long idUser,String status) {
         User user = userRepository.findByIdUser(idUser);
-        List<Ticket> ticket = ticketRepository.findByUserAndStatusIs(user,"Da Huy Ve");
-        return ticket;
+        return ticketRepository.findByUserAndStatusIs(user,"Da Huy Ve");
     }
 
     @Override
     public List<Ticket> findByUserAndStatusIsNot(Long idUser, String status) {
         User user = userRepository.findByIdUser(idUser);
-        List<Ticket> ticket = ticketRepository.findByUserAndStatusIsNot(user,"Da Huy Ve");
-        return ticket;
+        return ticketRepository.findByUserAndStatusIsNot(user,"Da Huy Ve");
     }
 
     @Override
     public List<Ticket> findByUserAndDateOrderTicketIsBetween(Long idUser, Date starDate, Date endDate) {
         User user = userRepository.findByIdUser(idUser);
-        List<Ticket> ticket = ticketRepository.findByUserAndDateOrderTicketIsBetween(user,starDate,endDate);
-        return ticket;
+        return  ticketRepository.findByUserAndDateOrderTicketIsBetween(user,starDate,endDate);
     }
 
 }

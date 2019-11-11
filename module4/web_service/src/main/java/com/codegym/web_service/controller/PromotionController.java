@@ -35,8 +35,8 @@ public class PromotionController {
         return ResponseEntity.ok("delete ok");
     }
     @GetMapping(value={"/afterenddate"})
-    public ResponseEntity<List<Promotion>> getAllPromotionByEndDate( Date date) {
-        date =new Date();
+    public ResponseEntity<List<Promotion>> getAllPromotionByEndDate() {
+        Date date =new Date();
         List<Promotion> promotions = promotionService.getAllPromotionByEndDate(date);
         return ResponseEntity.ok(promotions);
     }
