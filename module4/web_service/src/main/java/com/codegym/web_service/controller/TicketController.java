@@ -31,15 +31,15 @@ public class TicketController {
     }
 
     @GetMapping("/ticketUser/cancel/{idUser}")
-    public ResponseEntity<List<Ticket>> getTicketByIdUserAndStatusIs(@PathVariable(value = "idUser") Long idUser, String status) {
-        status = "da huy ve";
+    public ResponseEntity<List<Ticket>> getTicketByIdUserAndStatusIs(@PathVariable(value = "idUser") Long idUser) {
+        String status = "da huy ve";
         List<Ticket> ticket = ticketService.findByUserAndStatusIs(idUser, status);
         return ResponseEntity.ok().body(ticket);
     }
 
     @GetMapping("/ticketUser/order/{idUser}")
-    public ResponseEntity<List<Ticket>> getTicketByIdUserAndStatusIsNot(@PathVariable(value = "idUser") Long idUser, String status) {
-        status = "da huy ve";
+    public ResponseEntity<List<Ticket>> getTicketByIdUserAndStatusIsNot(@PathVariable(value = "idUser") Long idUser) {
+        String status = "da huy ve";
         List<Ticket> ticket = ticketService.findByUserAndStatusIsNot(idUser, status);
         return ResponseEntity.ok().body(ticket);
     }
