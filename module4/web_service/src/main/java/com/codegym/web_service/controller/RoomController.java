@@ -20,7 +20,7 @@ public class RoomController {
     public RoomService roomService;
 
     @GetMapping(value = {"/rooms"})
-    private ResponseEntity<?> getRooms() {
+    public ResponseEntity<List<Room>> getRooms() {
         List<Room> chairs = roomService.getRooms();
         return ResponseEntity.ok(chairs);
     }
@@ -28,7 +28,7 @@ public class RoomController {
     @GetMapping(value = {"/room/{id}"})
     public ResponseEntity<Room> getRoom(@PathVariable int id) {
         Room room = roomService.getRoomById(id);
-        return new ResponseEntity<Room>(room, HttpStatus.OK);
+        return new ResponseEntity<>(room, HttpStatus.OK);
     }
 
     @PostMapping("/addroom")
@@ -39,12 +39,12 @@ public class RoomController {
 
 
     @GetMapping(value = {"/roomPages"})
-    private ResponseEntity<?> getRooms(@PageableDefault(value = 5) Pageable pageable ) {
+    public ResponseEntity<Page<Room>> getRooms(@PageableDefault(value = 5) Pageable pageable ) {
         Page<Room> chairs = roomService.pageRoom(pageable);
         return ResponseEntity.ok(chairs);
     }
     @GetMapping(value = {"/searchNameRoom/{nameRoom}"})
-    private ResponseEntity<?> getSearchNameRoom(@PathVariable String nameRoom) {
+    public ResponseEntity<List<Room>> getSearchNameRoom(@PathVariable String nameRoom) {
         List<Room> chairSearchs = roomService.getSearchRoom(nameRoom);
         return ResponseEntity.ok(chairSearchs);
     }

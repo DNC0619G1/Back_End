@@ -22,15 +22,7 @@ public class BookingDetail  {
     @JoinColumn(name = "price_chair")
     private int priceChair;
 
-    public BookingDetail() {
-    }
-
-    public int getIsBookingDetail() {
-        return idBookingDetail;
-    }
-
-    public void setIsBookingDetail(int isBookingDetail) {
-        this.idBookingDetail = isBookingDetail;
+    public BookingDetail() {//khoi tao doi tuong.
     }
 
     public Booking getBooking() {
