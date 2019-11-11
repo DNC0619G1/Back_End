@@ -29,7 +29,7 @@ public class Chair {
     @Column(name = "type")
     private String type;
 
-    public Chair() {
+    public Chair() {//khoi tao
     }
     public int getIdChair() {
         return idChair;
@@ -63,19 +63,14 @@ public class Chair {
     public Room getRoom() {
         return room;
     }
-
     public void setRoom(Room room) {
         this.room = room;
     }
-
     public int getStatusChair() {
         return statusChair;
     }
     public void setStatusChair(int statusChair) {
         this.statusChair = statusChair;
-    }
-    public boolean getChoiseStatus() {
-        return choiseStatus;
     }
     public void setChoiseStatus(boolean choiseStatus) {
         this.choiseStatus = choiseStatus;

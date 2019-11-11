@@ -1,6 +1,5 @@
 package com.codegym.dao.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -27,7 +26,7 @@ public class Booking {
     @Column(name = "booking_date")
     private Date bookingDate;
 
-    public Booking() {
+    public Booking() {//khoi tao
     }
 
     public int getIdBooking() {

@@ -40,7 +40,7 @@ class ChairServiceImpl implements ChairService {
         chair1.setColumn(chair.getColumn());
         chair1.setRow(chair.getRow());
         chair1.setPosition(chair.getPosition());
-        chair1.setChoiseStatus(chair.getChoiseStatus());
+        chair1.setChoiseStatus(chair.isChoiseStatus());
         chair1.setStatusChair(chair.getStatusChair());
         chairRepository.save(chair1);
     }
