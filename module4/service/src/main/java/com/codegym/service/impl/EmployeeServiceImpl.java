@@ -43,52 +43,16 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void updateEmployee(EmployeeDTO employeeDTO) {
         Employee employee = employeeRepository.findByIdEmployee(employeeDTO.getIdEmployee());
-        if (employeeDTO.getImageEmployee() == "") {
-            employee.setImageEmployee(employee.getImageEmployee());
-        } else {
             employee.setImageEmployee(employeeDTO.getImageEmployee());
-        }
-        if (employeeDTO.getPasswordEmployee() == "") {
-            employee.setPasswordEmployee(employee.getPasswordEmployee());
-        } else {
             employee.setPasswordEmployee(employeeDTO.getPasswordEmployee());
-        }
-        if (employeeDTO.getNameEmployee() == "") {
-            employee.setNameEmployee(employee.getNameEmployee());
-        } else {
             employee.setNameEmployee(employeeDTO.getNameEmployee());
-        }
-        if (employeeDTO.getBirthDayEmployee() == null) {
-            employee.setBirthDayEmployee(employee.getBirthDayEmployee());
-        } else {
             employee.setBirthDayEmployee(employeeDTO.getBirthDayEmployee());
-        }
-        if (employeeDTO.getSexEmployee() == "") {
-            employee.setSexEmployee(employee.getSexEmployee());
-        } else {
             employee.setSexEmployee(employeeDTO.getSexEmployee());
-        }
-        if (employeeDTO.getEmailEmployee() == "") {
-            employee.setEmailEmployee(employee.getEmailEmployee());
-        } else {
             employee.setEmailEmployee(employeeDTO.getEmailEmployee());
-        }
-        if (employeeDTO.getLicenseEmployee() == 0) {
-            employee.setLicenseEmployee(employee.getLicenseEmployee());
-        } else {
             employee.setLicenseEmployee(employeeDTO.getLicenseEmployee());
-        }
-        if (employeeDTO.getNumberPhoneEmployee() == 0) {
-            employee.setNumberPhoneEmployee(employee.getNumberPhoneEmployee());
-        } else {
             employee.setNumberPhoneEmployee(employeeDTO.getNumberPhoneEmployee());
-        }
-        if (employeeDTO.getAddressEmployee() == "") {
-            employee.setAddressEmployee(employee.getAddressEmployee());
-        } else {
             employee.setAddressEmployee(employeeDTO.getAddressEmployee());
-        }
-        employeeRepository.save(employee);
+            employeeRepository.save(employee);
     }
 
     @Override
@@ -107,10 +71,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeRepository.save(employee);
     }
 
-    //    @Override
-//    public void save(Employee employee) {
-//        employeeRepository.save(employee);
-//    }
     @Override
     public void removeEmployee(Long idEmployee) {
         employeeRepository.deleteById(idEmployee);
