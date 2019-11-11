@@ -36,6 +36,7 @@ public class UserServiceImpl implements UserService {
             userDTO.setAddress(user.getAddress());
             userDTO.setNameMemberCard(user.getNameMemberCard());
             userDTO.setPoint(user.getPoint());
+            userDTO.setId_role(user.getId_role());
             return userDTO;
         }
         return null;
@@ -112,5 +113,15 @@ public class UserServiceImpl implements UserService {
         user.setNumberPhone(userDTO.getNumberPhone());
         user.setAddress(userDTO.getAddress());
         userRepository.save(user);
+    }
+
+    @Override
+    public User saveUser(User user) {
+        return userRepository.save(user);
+    }
+
+    @Override
+    public List<User> searchUser(String keyword) {
+        return userRepository.findByFullNameContainingOrNameMemberCardContaining(keyword, keyword);
     }
 }

@@ -15,4 +15,8 @@ public interface UserService {
     void updateUser(UserDTO userDTO);
 
     void save(UserDTO userDTO);
+
+    User saveUser(User user);
+
+    List<User> searchUser(String keyword);
 }

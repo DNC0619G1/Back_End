@@ -19,4 +19,5 @@ public interface PromotionService {
 
     List<Promotion> searchPromotionByDate(Date startDate, Date endDate);
 
+    Promotion deletePromotion(int idPromotion);
 }

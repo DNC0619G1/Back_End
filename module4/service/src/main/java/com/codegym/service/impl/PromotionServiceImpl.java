@@ -45,5 +45,14 @@ public class PromotionServiceImpl implements PromotionService {
     public List<Promotion> searchPromotionByDate(Date startDate, Date endDate) {
         return promotionRepository.findAllByStartDateBetween(startDate, endDate);
     }
+
+    @Override
+    public Promotion deletePromotion(int idPromotion) {
+        Promotion promotion = promotionRepository.findById(idPromotion).orElse(null);
+        List<Promotion> promotionList = promotionRepository.findAll();
+        promotionList.remove(promotion);
+        promotionRepository.saveAll(promotionList);
+        return promotion;
+    }
 }
 
