@@ -1,7 +1,6 @@
 package com.codegym.service;
 
 import com.codegym.dao.entity.Ticket;
-import com.codegym.dao.entity.User;
 
 import java.util.Date;
 import java.util.List;
@@ -12,7 +11,7 @@ public interface TicketService {
 
     List<Ticket> findByUser (Long idUser);
 
-    List<Ticket> findByUserAndStatusIs (Long idUser, String Status);
+    List<Ticket> findByUserAndStatusIs (Long idUser, String status);
 
     List<Ticket> findByUserAndStatusIsNot(Long idUser,String status);
 

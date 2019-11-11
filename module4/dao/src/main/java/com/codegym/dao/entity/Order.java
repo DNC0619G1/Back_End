@@ -1,8 +1,5 @@
 package com.codegym.dao.entity;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import java.util.Date;
 

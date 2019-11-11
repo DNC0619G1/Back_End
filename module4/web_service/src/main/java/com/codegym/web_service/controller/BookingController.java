@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.List;
 
@@ -17,7 +16,7 @@ public class BookingController {
     private BookingService bookingService;
 
     @GetMapping(value = {"/bookings"})
-    private ResponseEntity<?> bookings(){
+    public ResponseEntity<List<Booking>> bookings(){
         List<Booking> bookings =bookingService.getBookings();
         return ResponseEntity.ok(bookings);
     }
@@ -29,7 +28,7 @@ public class BookingController {
     @GetMapping(value = {"/getbooking/{id}"})
     public ResponseEntity<Booking> getBooking(@PathVariable int id) {
         Booking booking = bookingService.getBookingById(id);
-        return new ResponseEntity<Booking>(booking, HttpStatus.OK);
+        return new ResponseEntity<>(booking, HttpStatus.OK);
     }
 
 }

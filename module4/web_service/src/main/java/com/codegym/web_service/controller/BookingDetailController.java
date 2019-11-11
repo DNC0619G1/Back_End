@@ -1,10 +1,8 @@
 package com.codegym.web_service.controller;
 
-import com.codegym.dao.entity.Booking;
 import com.codegym.dao.entity.BookingDetail;
 import com.codegym.dao.repository.BookingRepository;
 import com.codegym.service.BookingDetailService;
-import com.codegym.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +19,7 @@ public class BookingDetailController {
     private BookingRepository bookingRepository;
 
     @GetMapping(value = {"/bookingdetails"})
-    private ResponseEntity<?> getBookingDetails(){
+    public ResponseEntity<List<BookingDetail>> getBookingDetails(){
         List<BookingDetail> bookingdetails =bookingDetailService.getBookingDetails();
         return ResponseEntity.ok(bookingdetails);
     }

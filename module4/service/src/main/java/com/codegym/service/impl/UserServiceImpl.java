@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findAll() {
-        return (List<User>) userRepository.findAll();
+        return userRepository.findAll();
     }
 
     @Override
@@ -45,60 +45,20 @@ public class UserServiceImpl implements UserService {
     @Override
     public void updatePassword(UserDTO userDTO) {
         User user = userRepository.findByIdUser(userDTO.getIdUser());
-        if(userDTO.getPassword() == ""){
-            user.setPassword(user.getPassword());
-        }
-        else{
-            user.setPassword(BCrypt.hashpw(userDTO.getPassword(),BCrypt.gensalt(12)));
-        }
+        user.setPassword(BCrypt.hashpw(userDTO.getPassword(),BCrypt.gensalt(12)));
         userRepository.save(user);
     }
 
     @Override
     public void updateUser(UserDTO userDTO) {
         User user = userRepository.findByIdUser(userDTO.getIdUser());
-        if(userDTO.getFullName() == ""){
-            user.setFullName(user.getFullName());
-        }
-        else{
             user.setFullName(userDTO.getFullName());
-        }
-        if(userDTO.getSex() == ""){
-            user.setSex(user.getSex());
-        }
-        else{
             user.setSex(userDTO.getSex());
-        }
-        if(userDTO.getEmail() == ""){
-            user.setEmail(user.getEmail());
-        }
-        else{
             user.setEmail(userDTO.getEmail());
-        }
-        if(userDTO.getLicense() == 0){
-            user.setLicense(user.getLicense());
-        }
-        else{
             user.setLicense(userDTO.getLicense());
-        }
-        if(userDTO.getNumberPhone() == 0){
-            user.setNumberPhone(user.getNumberPhone());
-        }
-        else{
             user.setNumberPhone(userDTO.getNumberPhone());
-        }
-        if(userDTO.getAddress() == ""){
-            user.setAddress(user.getAddress());
-        }
-        else{
             user.setAddress(userDTO.getAddress());
-        }
-        if(userDTO.getBirthDay() == null){
-            user.setBirthDay(user.getBirthDay());
-        }
-        else{
             user.setBirthDay(userDTO.getBirthDay());
-        }
         userRepository.save(user);
     }
     public String randomString(int dodai){
@@ -127,7 +87,7 @@ public class UserServiceImpl implements UserService {
         user.setAddress(userDTO.getAddress());
         user.setNameMemberCard(userDTO.getNameMemberCard() + userDTO.getFullName() + randomString(6));
         user.setPoint(userDTO.getPoint());
-        user.setId_role(userDTO.getId_role());
+        user.setIdRole(userDTO.getIdRole());
         userRepository.save(user);
     }
 }
