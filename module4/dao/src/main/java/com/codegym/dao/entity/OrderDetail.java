@@ -1,17 +1,18 @@
 package com.codegym.dao.entity;
-import javax.persistence.*;
-@Entity
-@Table(name = "booking_detail")
-public class BookingDetail  {
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "order_detail")
+public class OrderDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "bookingdetail_id")
-    private int idBookingDetail;
+    @Column(name = "orderDetail_id")
+    private int orderDetailId;
 
     @ManyToOne
-    @JoinColumn(name = "id_booking")
-    private Booking booking;
+    @JoinColumn(name = "id_order")
+    private Order orders;
 
     @ManyToOne
     @JoinColumn(name = "id_chair")
@@ -20,23 +21,23 @@ public class BookingDetail  {
     @JoinColumn(name = "price_chair")
     private int priceChair;
 
-    public BookingDetail() {//khoi tao doi tuong.
+    public OrderDetail() {
     }
 
-    public Booking getBooking() {
-        return booking;
+    public int getOrderDetailId() {
+        return orderDetailId;
     }
 
-    public int getIdBookingDetail() {
-        return idBookingDetail;
+    public void setOrderDetailId(int orderDetailId) {
+        this.orderDetailId = orderDetailId;
     }
 
-    public void setIdBookingDetail(int idBookingDetail) {
-        this.idBookingDetail = idBookingDetail;
+    public Order getOrder() {
+        return orders;
     }
 
-    public void setBooking(Booking booking) {
-        this.booking = booking;
+    public void setOrder(Order orders) {
+        this.orders = orders;
     }
 
     public Chair getChair() {
@@ -55,3 +56,4 @@ public class BookingDetail  {
         this.priceChair = priceChair;
     }
 }
+
