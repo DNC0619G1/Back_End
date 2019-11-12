@@ -12,12 +12,17 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderRepository orderRepository;
     @Override
-    public List<Order> getOrders() {
-        return orderRepository.findAll();
+    public List<Order> findAll() {
+        return (List<Order>) orderRepository.findAll();
     }
 
     @Override
     public void saveOrder(Order order) {
         orderRepository.save(order);
+    }
+
+    @Override
+    public Order getOrderById(int id) {
+        return orderRepository.findById(id).orElse(null);
     }
 }
