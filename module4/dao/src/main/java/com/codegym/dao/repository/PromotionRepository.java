@@ -12,6 +12,9 @@ public interface PromotionRepository extends JpaRepository<Promotion, Integer> {
 
     void deleteByIdPromotion(int id);
 
+    List<Promotion> findAllByTitlePromotionContaining(String tittle);
+    List<Promotion> findAllByStartDateBetween(Date startDate, Date endDate);
+
     @Query("select p from Promotion p where p.endDate >=:date")
     List<Promotion> findAllByEndDateAfter(Date date);
 }

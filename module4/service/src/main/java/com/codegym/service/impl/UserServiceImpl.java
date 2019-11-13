@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
             userDTO.setAddress(user.getAddress());
             userDTO.setNameMemberCard(user.getNameMemberCard());
             userDTO.setPoint(user.getPoint());
-            userDTO.setId_role(user.getId_role());
+            userDTO.setIdRole(user.getIdRole());
             return userDTO;
         }
         return null;
