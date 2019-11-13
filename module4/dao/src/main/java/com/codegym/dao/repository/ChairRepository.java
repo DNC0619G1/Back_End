@@ -10,7 +10,7 @@ public interface ChairRepository extends JpaRepository<Chair,Integer> {
             "inner join show_time st on b.id_show=st.id_show_time "+
             "where st.id_show_time =?1 ", nativeQuery = true)
     List<Chair> findAllByIdShowTime(int id);
-    @Query("select c from Chair c where c.room.idRoom >=:idRoom")
+    @Query("select c from Chair c where c.room.idRoom =:idRoom")
     List<Chair> findAllByIdRoom(int idRoom);
 }
 
